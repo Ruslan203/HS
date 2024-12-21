@@ -7,7 +7,21 @@ interface Option {
     option_value: number;
     options_id: number;
 }
-
+interface Brand {
+    code: string;
+    id: number;
+    logo: string | null;
+    models: number[];
+    name: string;
+    text: string;
+    stars?: number;
+    sold?: number;
+    slug: string;  // Добавляем поле slug
+    url: string;
+    quantity: number;
+    weight: number;
+    line: string;
+}
 // Определяем интерфейс для Model
 interface Model {
     applications: unknown;
