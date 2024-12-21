@@ -1,0 +1,36 @@
+- name: Stop docker compose
+  docker_compose:
+    project_src: "/opt/{{ CI_PROJECT_NAME }}"
+    state: absent
+  ignore_errors: yes
+
+- name: Login to private docker registry
+  docker_login:
+    registry: "{{ CI_REGISTRY }}"
+    username: "{{ CI_REGISTRY_USER }}"
+    password: "{{ CI_JOB_TOKEN }}"
+    reauthorize: yes
+
+- name: Pull new docker image
+  docker_image:
+    repository: "{{ CI_REGISTRY }}"
+    name: "{{ CI_REGISTRY_IMAGE }}"
+    tag: "{{ CI_IMAGE_TAG }}"
+    source: pull
+    force_source: yes
+
+- name: Create project directory if it does not exist
+  file:
+    path: "/opt/{{ CI_PROJECT_NAME }}"
+    state: directory
+
+- name: Copy new compose to instance
+  template:
+    src: "./docker-compose.yml.j2"
+    dest: "/opt/{{ CI_PROJECT_NAME }}/docker-compose.yml"
+
+- name: Up new compose
+  docker_compose:
+    project_src: "/opt/{{ CI_PROJECT_NAME }}"
+    build: no
+    restarted: yes

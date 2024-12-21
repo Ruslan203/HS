@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  {{ CI_PROJECT_NAME }}:
+    image: {{ CI_IMAGE }}
+    container_name: {{ CI_PROJECT_NAME }}
+    command: yarn start-prod
+    privileged: true
+    ports:
+      - 49777:80
+    restart: always
