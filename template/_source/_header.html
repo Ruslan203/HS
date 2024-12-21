@@ -1,0 +1,58 @@
+	<header class="header compensate-for-scrollbar">
+		<div class="container">
+			<div class="row align-items-center header__wrapper">
+				<div class="col-3 col-sm-2 header__burger">
+					<div class="burger"><span></span></div>
+				</div>
+				<div class="col-6 col-sm-8 col-lg-2 logo header__logo"><a href="/" class="logo__link"><img src="images/logo.svg" class="logo__image"></a></div>
+				<div class="col-2 d-none d-lg-block city header__city"><a href="javascript:;" class="city__link" data-fancybox data-type="ajax" data-src="_source/ajax-citys.html">Москва</a></div>
+				<div class="col-6 d-none d-lg-block nav header__nav">
+					<ul class="nav__list">
+						<li class="nav__item"><a href="#" class="nav__link nav__link--active">Мастера</a></li>
+						<li class="nav__item"><a href="#" class="nav__link">Салоны</a></li>
+						<li class="nav__item"><a href="#" class="nav__link">Работы</a></li>
+						<li class="nav__item"><a href="#" class="nav__link">Заказы</a></li>
+						<li class="nav__item"><a href="#" class="nav__link">Значения</a></li>
+						<li class="nav__item"><a href="#" class="nav__link">Магазин</a></li>
+					</ul>
+				</div>
+				<div class="col-3 col-sm-2 col-lg-2 header__profile">
+					<a href="#" class="header__shop"><span class="header__shop-notify">1</span></a>
+					<!-- если не авторизован -->
+					<a href="#" class="header__profile-link" data-fancybox data-src="#login_form" data-options='{"baseClass": "fancybox-auto", "touch": false}'>Вход</a>
+					<!-- если авторизован -->
+					<div class="header__profile-user user">
+						<div class="user__nav">
+							<a href="javascript:;" data-fancybox data-src="#messages" data-options='{"baseClass": "fancybox-right", "touch": false}' class="user__nav-link user__nav-link--messages">Сообщения <span class="user__notify">2</span></a>
+							<a href="#" class="user__nav-link user__nav-link--profile">Профиль</a>
+							<a href="#" class="user__nav-link user__nav-link--logout">Выйти</a>
+						</div>
+						<div class="user__ava ibg">
+							<img src="upload/users/002.jpg" alt="">
+							<span class="user__notify">2</span>
+							<div class="user__name">Максим Ю.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="d-lg-none nav-mobile">
+			<div class="container">
+				<div class="row no-gutters">
+					<div class="col-10 col-xs-8 col-md-6">
+						<div class="nav-mobile__inner">
+							<ul class="nav__list">
+								<li class="nav__item"><a href="javascript:;" class="nav__link nav__link--city" data-fancybox data-type="ajax" data-src="_source/ajax-citys.html">Москва</a></li>
+								<li class="nav__item"><a href="#" class="nav__link nav__link--active">Мастера</a></li>
+								<li class="nav__item"><a href="#" class="nav__link">Салоны</a></li>
+								<li class="nav__item"><a href="#" class="nav__link">Работы</a></li>
+								<li class="nav__item"><a href="#" class="nav__link">Заказы</a></li>
+								<li class="nav__item"><a href="#" class="nav__link">Значения</a></li>
+								<li class="nav__item"><a href="#" class="nav__link nav__link--basket">Магазин</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>

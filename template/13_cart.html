@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- favicon dark -->
+	<link rel="apple-touch-icon" sizes="180x180" href="images/favicon_dark/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon_dark/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon_dark/favicon-16x16.png">
+	<link rel="manifest" href="images/favicon_dark/site.webmanifest">
+	<link rel="mask-icon" href="images/favicon_dark/safari-pinned-tab.svg" color="#c31700">
+	<link rel="shortcut icon" href="images/favicon_dark/favicon.ico">
+	<meta name="apple-mobile-web-app-title" content="RusTattoo">
+	<meta name="application-name" content="RusTattoo">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="images/favicon_dark/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- favicon light -->
+	<!--
+	<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+	<link rel="manifest" href="images/favicon/site.webmanifest">
+	<link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="images/favicon/favicon.ico">
+	<meta name="apple-mobile-web-app-title" content="RusTattoo">
+	<meta name="application-name" content="RusTattoo">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="images/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	-->
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+
+	<link rel="stylesheet" href="plugins/bootstrap-4.4.1/bootstrap-grid.css">
+	<link rel="stylesheet" href="plugins/bootstrap-4.4.1/bootstrap-grid-fix.css">
+	<link rel="stylesheet" href="plugins/fontawesome-free-5.11.2-web/css/all.min.css">
+	<link rel="stylesheet" href="plugins/slick-1.8.1/slick.css">
+	<link rel="stylesheet" href="plugins/fancybox-master/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="plugins/chosen_v1.8.7/chosen.min.css">
+	<link rel="stylesheet" href="plugins/dropzone/dropzone.css">
+	<link rel="stylesheet" href="plugins/jquery.growl/jquery.growl.css">
+	<link rel="stylesheet" href="template_styles.css">
+
+	<title>13 cart</title>
+</head>
+<body>
+
+	<header class="header compensate-for-scrollbar">
+		<div class="container">
+			<div class="row align-items-center header__wrapper">
+				<div class="col-3 col-sm-2 header__burger">
+					<div class="burger"><span></span></div>
+				</div>
+				<div class="col-6 col-sm-8 col-lg-2 logo header__logo"><a href="/" class="logo__link"><img src="images/logo.svg" class="logo__image"></a></div>
+				<div class="col-2 d-none d-lg-block city header__city"><a href="javascript:;" class="city__link" data-fancybox data-type="ajax" data-src="_source/ajax-citys.html">Москва</a></div>
+				<div class="col-6 d-none d-lg-block nav header__nav">
+					<ul class="nav__list">
+						<li class="nav__item"><a href="#" class="nav__link nav__link--active">Мастера</a></li>
+						<li class="nav__item"><a href="#" class="nav__link">Салоны</a></li>
+						<li class="nav__item"><a href="#" class="nav__link">Работы</a></li>
+						<li class="nav__item"><a href="#" class="nav__link">Заказы</a></li>
+						<li class="nav__item"><a href="#" class="nav__link">Значения</a></li>
+						<li class="nav__item"><a href="#" class="nav__link">Магазин</a></li>
+					</ul>
+				</div>
+				<div class="col-3 col-sm-2 col-lg-2 header__profile">
+					<a href="#" class="header__shop"><span class="header__shop-notify">1</span></a>
+					<!-- если не авторизован -->
+					<a href="#" class="header__profile-link" data-fancybox data-src="#login_form" data-options='{"baseClass": "fancybox-auto", "touch": false}'>Вход</a>
+					<!-- если авторизован -->
+					<div class="header__profile-user user">
+						<div class="user__nav">
+							<a href="javascript:;" data-fancybox data-src="#messages" data-options='{"baseClass": "fancybox-right", "touch": false}' class="user__nav-link user__nav-link--messages">Сообщения <span class="user__notify">2</span></a>
+							<a href="#" class="user__nav-link user__nav-link--profile">Профиль</a>
+							<a href="#" class="user__nav-link user__nav-link--logout">Выйти</a>
+						</div>
+						<div class="user__ava ibg">
+							<img src="upload/users/002.jpg" alt="">
+							<span class="user__notify">2</span>
+							<div class="user__name">Максим Ю.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="d-lg-none nav-mobile">
+			<div class="container">
+				<div class="row no-gutters">
+					<div class="col-10 col-xs-8 col-md-6">
+						<div class="nav-mobile__inner">
+							<ul class="nav__list">
+								<li class="nav__item"><a href="javascript:;" class="nav__link nav__link--city" data-fancybox data-type="ajax" data-src="_source/ajax-citys.html">Москва</a></li>
+								<li class="nav__item"><a href="#" class="nav__link nav__link--active">Мастера</a></li>
+								<li class="nav__item"><a href="#" class="nav__link">Салоны</a></li>
+								<li class="nav__item"><a href="#" class="nav__link">Работы</a></li>
+								<li class="nav__item"><a href="#" class="nav__link">Заказы</a></li>
+								<li class="nav__item"><a href="#" class="nav__link">Значения</a></li>
+								<li class="nav__item"><a href="#" class="nav__link nav__link--basket">Магазин</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section class="cart">
+		<div class="container">
+			<form action="#" method="post" class="form">
+				<div class="row mt">
+					<div class="col-12 col-lg-8 mb">
+						<h1 class="h2">Ваш заказ</h1>
+						<div class="cart__items mt mb">
+							<h3 class="h5">MT Mustang Tattoo</h3>
+							<div class="cart__item">
+								<a href="#" class="cart__item-image">
+									<img src="upload/catalog/001-1.jpg" alt="">
+								</a>
+								<div class="cart__item-data">
+									<a href="#" class="cart__item-name">Cheyenne HAWK Thunder, красный Carbon, 21 мм</a>
+									<div class="cart__item-count">
+										<input type="number" value="1" min="1" max="99" class="input input--count">
+									</div>
+									<div class="cart__item-cost"><span>11000</span> ₽</div>
+									<div class="cart__item-del"></div>
+								</div>
+							</div>
+							<div class="cart__item">
+								<a href="#" class="cart__item-image">
+									<img src="upload/catalog/002.jpg" alt="">
+								</a>
+								<div class="cart__item-data">
+									<a href="#" class="cart__item-name">Тату иглы Blitz Magnum</a>
+									<div class="cart__item-count">
+										<input type="number" value="1" min="1" max="99" class="input input--count">
+									</div>
+									<div class="cart__item-cost"><span>15700</span> ₽</div>
+									<div class="cart__item-del"></div>
+								</div>
+							</div>
+							<div class="cart__itogo mt">Итого: <span>26700</span> ₽</div>
+						</div>
+						<div class="cart__items mt mb">
+							<h3 class="h5">World Famous</h3>
+							<div class="cart__item">
+								<a href="#" class="cart__item-image">
+									<img src="upload/catalog/003-1.jpg" alt="">
+								</a>
+								<div class="cart__item-data">
+									<a href="#" class="cart__item-name">Cheyenne HAWK Thunder, красный Carbon, 21 мм</a>
+									<div class="cart__item-count">
+										<input type="number" value="1" min="1" max="99" class="input input--count">
+									</div>
+									<div class="cart__item-cost"><span>11000</span> ₽</div>
+									<div class="cart__item-del"></div>
+								</div>
+							</div>
+							<div class="cart__itogo mt">Итого: <span>11000</span> ₽</div>
+						</div>
+						<div class="cart__items cart__items--none mt mb">
+							<h3 class="h5">Нет в наличии</h3>
+							<div class="cart__item">
+								<a href="#" class="cart__item-image">
+									<img src="upload/catalog/004.jpg" alt="">
+								</a>
+								<div class="cart__item-data">
+									<a href="#" class="cart__item-name">Тату иглы Blitz Magnum</a>
+									<div class="cart__item-count"></div>
+									<div class="cart__item-cost"><span>15700</span> ₽</div>
+									<div class="cart__item-del"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-lg-4">
+						<div class="cart__form">
+							<div class="cart__sum"><span>15700</span> ₽</div>
+							<div class="cart__count">Итого за 5 товаров</div>
+							<div class="divider mt mb"></div>
+							<h3 class="h5">Оформление заказа</h3>
+							<div class="form__group">
+								<label for="name">Имя и фамилия</label>
+								<input type="text" class="input" id="name">
+							</div>
+							<div class="form__group">
+								<label for="address">Адрес доставки</label>
+								<textarea name="" class="textarea" id="address"></textarea>
+							</div>
+							<div class="form__group">
+								<label for="comment">Комментарий</label>
+								<textarea name="" class="textarea" id="comment"></textarea>
+							</div>
+							<div class="form__group">
+								<input type="submit" class="btn btn--w100 btn--red" value="Оформить заказ">
+							</div>
+							<div class="form__desc mt">Ваш заказ будет передан передан официальному представителю производителя.</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+
+	<footer class="footer mt">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-lg-6 footer__left">
+					<div class="row nav-footer">
+						<div class="col-6 col-sm-4"><a href="#" class="nav-footer__link">Мастера</a></div>
+						<div class="col-6 col-sm-4"><a href="#" class="nav-footer__link">Салоны</a></div>
+						<div class="col-6 col-sm-4"><a href="#" class="nav-footer__link">Работы</a></div>
+						<div class="col-6 col-sm-4"><a href="#" class="nav-footer__link">Заказы</a></div>
+						<div class="col-6 col-sm-4"><a href="#" class="nav-footer__link">Значения</a></div>
+						<div class="col-6 col-sm-4"><a href="#" class="nav-footer__link">Магазин</a></div>
+					</div>
+				</div>
+				<div class="col-12 col-lg-6 footer__right">
+					<div class="social"><!--
+						--><a href="#" target="_blank" class="social__item social__item--vk"><i class="fab fa-vk"></i></a><!--
+						--><a href="#" target="_blank" class="social__item social__item--facebook"><i class="fab fa-facebook-f"></i></a><!--
+						--><a href="#" target="_blank" class="social__item social__item--twitter"><i class="fab fa-twitter"></i></a><!--
+						--><a href="#" target="_blank" class="social__item social__item--instagram"><i class="fab fa-instagram"></i></a><!--
+						--><a href="#" target="_blank" class="social__item social__item--ok"><i class="fab fa-odnoklassniki"></i></a><!--
+						--><a href="#" target="_blank" class="social__item social__item--youtube"><i class="fab fa-youtube"></i></a><!--
+						--><a href="#" target="_blank" class="social__item social__item--telegram"><i class="fab fa-telegram-plane"></i></a><!--
+					--></div>
+					<div class="copy">© RusTattoo, 2020</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<div class="write-admin">
+		<a href="#" class="write-admin__link"><span>Нужна помощь?</span></a>
+	</div>
+	<div id="thank" class="popup">
+		<div class="popup__inner">
+			<p>Спасибо! Мы принияли вашу заявку,<br>менеджер вам перезвонит.</p>
+		</div>
+	</div>
+	<a href="#" data-fancybox data-src="#thank" class="hide" id="thank_link"></a>
+
+	<div id="filter_map" class="popup">
+		<div class="popup__inner">
+			Выбор на карте
+		</div>
+	</div>
+
+	<div id="filter_filters" class="popup popup--filter">
+		<div class="popup__inner">
+			<h3>Фильтры</h3>
+			<form action="/" name="" class="mt" id="form_filter">
+				<div class="filter__group">
+					<div class="filter__group-title pt pb">Стиль</div>
+					<div class="filter__group-data">
+						<div class="form__checkbox"><label><input type="checkbox" value="1" class="checkbox" data-name="3D">3D</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="2" class="checkbox" data-name="Абстракционизм">Абстракционизм</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="3" class="checkbox" data-name="Авторский">Авторский</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="4" class="checkbox" data-name="Акварель">Акварель</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="5" class="checkbox" data-name="Биомеханика">Биомеханика</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="6" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="7" class="checkbox" data-name="Вип Шейдинг">Вип Шейдинг</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="8" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+					</div>
+				</div>
+				<div class="filter__group">
+					<div class="filter__group-title pt pb">Место</div>
+					<div class="filter__group-data">
+						<div class="form__checkbox"><label><input type="checkbox" value="9" class="checkbox" data-name="3D">3D</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="10" class="checkbox" data-name="Абстракционизм">Абстракционизм</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="11" class="checkbox" data-name="Авторский">Авторский</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="12" class="checkbox" data-name="Акварель">Акварель</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="13" class="checkbox" data-name="Биомеханика">Биомеханика</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="14" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="15" class="checkbox" data-name="Вип Шейдинг">Вип Шейдинг</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="16" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+					</div>
+				</div>
+				<div class="filter__group">
+					<div class="filter__group-title pt pb">Тип</div>
+					<div class="filter__group-data">
+						<div class="form__checkbox"><label><input type="checkbox" value="17" class="checkbox" data-name="3D">3D</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="18" class="checkbox" data-name="Абстракционизм">Абстракционизм</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="19" class="checkbox" data-name="Авторский">Авторский</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="20" class="checkbox" data-name="Акварель">Акварель</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="21" class="checkbox" data-name="Биомеханика">Биомеханика</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="22" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="23" class="checkbox" data-name="Вип Шейдинг">Вип Шейдинг</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="24" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+					</div>
+				</div>
+				<div class="filter__group">
+					<div class="filter__group-title pt pb">Значение</div>
+					<div class="filter__group-data">
+						<div class="form__checkbox"><label><input type="checkbox" value="25" class="checkbox" data-name="3D">3D</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="26" class="checkbox" data-name="Абстракционизм">Абстракционизм</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="27" class="checkbox" data-name="Авторский">Авторский</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="28" class="checkbox" data-name="Акварель">Акварель</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="29" class="checkbox" data-name="Биомеханика">Биомеханика</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="30" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="31" class="checkbox" data-name="Вип Шейдинг">Вип Шейдинг</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="32" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+					</div>
+				</div>
+				<div class="form__buttons">
+					<div class="row">
+						<div class="col-6">
+							<input type="reset" class="btn btn--w100 btn--transparent" value="Сбросить">
+						</div>
+						<div class="col-6">
+							<input type="submit" class="btn btn--w100" value="Применить">
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div id="filter_catalog" class="popup popup--filter">
+		<div class="popup__inner">
+			<h3>Фильтры</h3>
+			<form action="/" name="" class="mt" id="form_filter_catalog">
+				<div class="filter__group">
+					<div class="filter__group-title pt pb">Тип</div>
+					<div class="filter__group-data">
+						<div class="form__checkbox"><label><input type="checkbox" value="1" class="checkbox" data-name="Индукционные">Индукционные</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="2" class="checkbox" data-name="Роторные">Роторные</label></div>
+					</div>
+				</div>
+				<div class="filter__group">
+					<div class="filter__group-title pt pb">Бренд</div>
+					<div class="filter__group-data">
+						<div class="form__checkbox"><label><input type="checkbox" value="1" class="checkbox" data-name="ArtDriver Tattoo Machine">ArtDriver Tattoo Machine</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="2" class="checkbox" data-name="Barmaley Machines">Barmaley Machines</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="3" class="checkbox" data-name="Burlak Machines">Burlak Machines</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="4" class="checkbox" data-name="BUZZ Rotary">BUZZ Rotary</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="5" class="checkbox" data-name="Critical Tattoo Machine">Critical Tattoo Machine</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="6" class="checkbox" data-name="Cheyenne">Cheyenne</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="7" class="checkbox" data-name="Diablo Rotary">Diablo Rotary</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="8" class="checkbox" data-name="Dragonfly X2">Dragonfly X2</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="9" class="checkbox" data-name="EGO">EGO</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="10" class="checkbox" data-name="Elite Pen">Elite Pen</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="11" class="checkbox" data-name="Odds And Ends">Odds And Ends</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="12" class="checkbox" data-name="Handy Help">Handy Help</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="13" class="checkbox" data-name="Knick Knacks">Knick Knacks</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="14" class="checkbox" data-name="Nick’S Knacks">Nick’S Knacks</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="15" class="checkbox" data-name="Et Cetera Systems">Et Cetera Systems</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="16" class="checkbox" data-name="Closet Of Choices">Closet Of Choices</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="17" class="checkbox" data-name="Assorted Assets">Assorted Assets</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="18" class="checkbox" data-name="Trusted Assortment">Trusted Assortment</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="19" class="checkbox" data-name="Applicable Assortment">Applicable Assortment</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="20" class="checkbox" data-name="Resource Refresh">Resource Refresh</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="21" class="checkbox" data-name="Random Refresh">Random Refresh</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="22" class="checkbox" data-name="The Source">The Source</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="23" class="checkbox" data-name="Complete Collection">Complete Collection</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="24" class="checkbox" data-name="Terrific Tchotchkes">Terrific Tchotchkes</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="24" class="checkbox" data-name="Sporadic Systems">Sporadic Systems</label></div>
+					</div>
+				</div>
+				<div class="filter__group">
+					<div class="filter__group-title pt pb">Страна производитель</div>
+					<div class="filter__group-data">
+						<div class="form__checkbox"><label><input type="checkbox" value="1" class="checkbox" data-name="Польша">Польша</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="2" class="checkbox" data-name="Россия">Россия</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="3" class="checkbox" data-name="США">США</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="4" class="checkbox" data-name="Украина">Украина</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="5" class="checkbox" data-name="Великобритания">Великобритания</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="6" class="checkbox" data-name="КНР">КНР</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="7" class="checkbox" data-name="Тайвань">Тайвань</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="8" class="checkbox" data-name="Германия">Германия</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="9" class="checkbox" data-name="Венгрия">Венгрия</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="10" class="checkbox" data-name="Швеция">Швеция</label></div>
+					</div>
+				</div>
+				<div class="form__buttons">
+					<div class="row">
+						<div class="col-6">
+							<input type="reset" class="btn btn--w100 btn--transparent" value="Сбросить">
+						</div>
+						<div class="col-6">
+							<input type="submit" class="btn btn--w100" value="Применить">
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div id="messages" class="popup popup--messages">
+		<div class="popup__inner dialogs">
+			<div class="popup__header">
+				<h3>Сообщения</h3>
+			</div>
+			<!-- <div class="messages__dialogs messages__dialogs--empty"> --> <!-- ЕСЛИ ДИАЛОГОВ НЕТ -->
+			<div class="messages__dialogs">
+				<div class="messages__dialog" data-dialog="1">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/006.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Вероника Кравчинская</div>
+									<div class="author__message">И со мной она так же обошлась! Ха...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"><span>3</span></div>
+							<div class="message__date">01:15</div>
+						</div>
+					</div>
+				</div>
+				<div class="messages__dialog" data-dialog="2">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/007.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Артур Джебко</div>
+									<div class="author__message">Вы НИ когда не были нашим клиен...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"><span>1</span></div>
+							<div class="message__date">Вчера</div>
+						</div>
+					</div>
+				</div>
+				<div class="messages__dialog" data-dialog="3">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/002.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Виктория Третьякова</div>
+									<div class="author__message">Кто бы что не говорил, а татуировк...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"></div>
+							<div class="message__date">Вс</div>
+						</div>
+					</div>
+				</div>
+				<div class="messages__dialog" data-dialog="4">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/005.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Мадина Шмидт</div>
+									<div class="author__message">Я мечтала о татуировке лет с 18, оч...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"></div>
+							<div class="message__date">31.12.19</div>
+						</div>
+					</div>
+				</div>
+				<div class="messages__dialog" data-dialog="1">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/006.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Вероника Кравчинская</div>
+									<div class="author__message">И со мной она так же обошлась! Ха...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"></div>
+							<div class="message__date">01:15</div>
+						</div>
+					</div>
+				</div>
+				<div class="messages__dialog" data-dialog="2">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/007.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Артур Джебко</div>
+									<div class="author__message">Вы НИ когда не были нашим клиен...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"></div>
+							<div class="message__date">Вчера</div>
+						</div>
+					</div>
+				</div>
+				<div class="messages__dialog" data-dialog="3">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/002.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Виктория Третьякова</div>
+									<div class="author__message">Кто бы что не говорил, а татуировк...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"></div>
+							<div class="message__date">Вс</div>
+						</div>
+					</div>
+				</div>
+				<div class="messages__dialog" data-dialog="4">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/005.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Мадина Шмидт</div>
+									<div class="author__message">Я мечтала о татуировке лет с 18, оч...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"></div>
+							<div class="message__date">31.12.19</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup__inner dialog">
+			<div class="popup__header">
+				<a href="#" class="back-to-dialogs"></a>
+				<a href="#" class="dialog__author author author--40">
+					<div class="author__image">
+						<div class="author__photo ibg"><img src="upload/users/006.jpg" alt=""></div>
+					</div>
+					<div class="author__data">
+						<div class="author__name">Вероника Кравчинская</div>
+					</div>
+				</a>
+			</div>
+			<div class="messages__messages">
+				<div class="messages__messages-inner">
+					<div class="dialog__date"><span>16 февраля</span></div>
+					<div class="dialog__message dialog__message--apponent">
+						<div>И со мной она так же обошлась! Хамит, клиентов не ценит.В её салоне в Симферополе по улице Казанская, 30 работает Андрей, который водит меня за нос уже целый год и никак не хочу доделать свою работу.</div>
+						<span>00:58</span>
+					</div>
+					<div class="dialog__message dialog__message--apponent">
+						<img src="upload/masonry/004.jpg" alt="">
+						<span>00:59</span>
+					</div>
+					<div class="dialog__message dialog__message--you">
+						<div>Вы НИ когда не были нашим клиентом. И это прекрасно! Спасибо за чёрный пиар))) Всего наилучшего)</div>
+						<span>01:15</span>
+					</div>
+					<div class="dialog__message dialog__message--apponent">
+						<div>И со мной она так же обошлась! Хамит, клиентов не ценит.В её салоне в Симферополе по улице Казанская, 30 работает Андрей, который водит меня за нос уже целый год и никак не хочу доделать свою работу.</div>
+						<span>00:58</span>
+					</div>
+					<div class="dialog__message dialog__message--you">
+						<div>Вы НИ когда не были нашим клиентом. И это прекрасно! Спасибо за чёрный пиар))) Всего наилучшего)</div>
+						<span>01:15</span>
+					</div>
+					<div class="dialog__message dialog__message--you">
+						<div>Вы НИ когда не были нашим клиентом. И это прекрасно! Спасибо за чёрный пиар))) Всего наилучшего)</div>
+						<span>01:15</span>
+					</div>
+					<div class="dialog__message dialog__message--you">
+						<img src="upload/masonry/002.jpg" alt="">
+						<span>01:15</span>
+					</div>
+				</div>
+			</div>
+			<div class="popup__footer">
+				<form action="/" method="post" class="dialog__form">
+					<input type="file" name="dialog__file">
+					<textarea name="" value="" id="dialog__textarea" class="textarea" placeholder="Сообщение" class="textarea"></textarea>
+					<input type="submit" value="">
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="login_form" class="popup">
+		<div class="popup__inner">
+			<div class="mb text-align-center">
+				<a href="javascript:;" class="btn" id="auth">Авторизоваться</a>
+			</div>
+			<div class="auth">
+				<a href="#" class="auth__item auth__item--vk">
+					<i class="fab fa-vk"></i>
+				</a>
+				<a href="#" class="auth__item auth__item--facebook">
+					<i class="fab fa-facebook-f"></i>
+				</a>
+				<a href="#" class="auth__item auth__item--instagram">
+					<i class="fab fa-instagram"></i>
+				</a>
+				<a href="#" class="auth__item auth__item--yandex">
+					<i class="fab fa-yandex"></i>
+				</a>
+				<a href="#" class="auth__item auth__item--google">
+					<i class="fab fa-google"></i>
+				</a>
+				<a href="#" class="auth__item auth__item--mailru">
+					<i class="fas fa-at"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery -->
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<!-- recliner -->
+	<script src="js/recliner.min.js"></script>
+	<!-- prefixfree -->
+	<script src="js/prefixfree.min.js"></script>
+	<!-- slick -->
+	<script src="plugins/slick-1.8.1/slick.min.js"></script>
+	<!-- fancybox -->
+	<script src="plugins/fancybox-master/jquery.fancybox.min.js"></script>
+	<!-- chosen -->
+	<script src="plugins/chosen_v1.8.7/chosen.jquery.min.js"></script>
+	<!-- mansory -->
+	<script src="plugins/mp-mansory/mp.mansory.js"></script>
+	<!-- dropzone -->
+	<script src="plugins/dropzone/dropzone.js"></script>
+	<!-- mask -->
+	<script src="plugins/jQuery-Mask-Plugin-master/jquery.mask.min.js"></script>
+	<!-- growl -->
+	<script src="plugins/jquery.growl/jquery.growl.js"></script>
+	<!-- user script -->
+	<script src="script.js"></script>
+
+</body>
+</html>

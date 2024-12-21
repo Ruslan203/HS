@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- favicon dark -->
+	<link rel="apple-touch-icon" sizes="180x180" href="images/favicon_dark/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon_dark/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon_dark/favicon-16x16.png">
+	<link rel="manifest" href="images/favicon_dark/site.webmanifest">
+	<link rel="mask-icon" href="images/favicon_dark/safari-pinned-tab.svg" color="#c31700">
+	<link rel="shortcut icon" href="images/favicon_dark/favicon.ico">
+	<meta name="apple-mobile-web-app-title" content="RusTattoo">
+	<meta name="application-name" content="RusTattoo">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="images/favicon_dark/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- favicon light -->
+	<!--
+	<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+	<link rel="manifest" href="images/favicon/site.webmanifest">
+	<link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="images/favicon/favicon.ico">
+	<meta name="apple-mobile-web-app-title" content="RusTattoo">
+	<meta name="application-name" content="RusTattoo">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="images/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	-->
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+
+	<link rel="stylesheet" href="plugins/bootstrap-4.4.1/bootstrap-grid.css">
+	<link rel="stylesheet" href="plugins/bootstrap-4.4.1/bootstrap-grid-fix.css">
+	<link rel="stylesheet" href="plugins/fontawesome-free-5.11.2-web/css/all.min.css">
+	<link rel="stylesheet" href="plugins/slick-1.8.1/slick.css">
+	<link rel="stylesheet" href="plugins/fancybox-master/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="plugins/chosen_v1.8.7/chosen.min.css">
+	<link rel="stylesheet" href="plugins/dropzone/dropzone.css">
+	<link rel="stylesheet" href="plugins/jquery.growl/jquery.growl.css">
+	<link rel="stylesheet" href="template_styles.css">
+
+	<title>09 catalog</title>
+</head>
+<body>
+
+	<header class="header compensate-for-scrollbar">
+		<div class="container">
+			<div class="row align-items-center header__wrapper">
+				<div class="col-3 col-sm-2 header__burger">
+					<div class="burger"><span></span></div>
+				</div>
+				<div class="col-6 col-sm-8 col-lg-2 logo header__logo"><a href="/" class="logo__link"><img src="images/logo.svg" class="logo__image"></a></div>
+				<div class="col-2 d-none d-lg-block city header__city"><a href="javascript:;" class="city__link" data-fancybox data-type="ajax" data-src="_source/ajax-citys.html">Москва</a></div>
+				<div class="col-6 d-none d-lg-block nav header__nav">
+					<ul class="nav__list">
+						<li class="nav__item"><a href="#" class="nav__link nav__link--active">Мастера</a></li>
+						<li class="nav__item"><a href="#" class="nav__link">Салоны</a></li>
+						<li class="nav__item"><a href="#" class="nav__link">Работы</a></li>
+						<li class="nav__item"><a href="#" class="nav__link">Заказы</a></li>
+						<li class="nav__item"><a href="#" class="nav__link">Значения</a></li>
+						<li class="nav__item"><a href="#" class="nav__link">Магазин</a></li>
+					</ul>
+				</div>
+				<div class="col-3 col-sm-2 col-lg-2 header__profile">
+					<a href="#" class="header__shop"><span class="header__shop-notify">1</span></a>
+					<!-- если не авторизован -->
+					<a href="#" class="header__profile-link" data-fancybox data-src="#login_form" data-options='{"baseClass": "fancybox-auto", "touch": false}'>Вход</a>
+					<!-- если авторизован -->
+					<div class="header__profile-user user">
+						<div class="user__nav">
+							<a href="javascript:;" data-fancybox data-src="#messages" data-options='{"baseClass": "fancybox-right", "touch": false}' class="user__nav-link user__nav-link--messages">Сообщения <span class="user__notify">2</span></a>
+							<a href="#" class="user__nav-link user__nav-link--profile">Профиль</a>
+							<a href="#" class="user__nav-link user__nav-link--logout">Выйти</a>
+						</div>
+						<div class="user__ava ibg">
+							<img src="upload/users/002.jpg" alt="">
+							<span class="user__notify">2</span>
+							<div class="user__name">Максим Ю.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="d-lg-none nav-mobile">
+			<div class="container">
+				<div class="row no-gutters">
+					<div class="col-10 col-xs-8 col-md-6">
+						<div class="nav-mobile__inner">
+							<ul class="nav__list">
+								<li class="nav__item"><a href="javascript:;" class="nav__link nav__link--city" data-fancybox data-type="ajax" data-src="_source/ajax-citys.html">Москва</a></li>
+								<li class="nav__item"><a href="#" class="nav__link nav__link--active">Мастера</a></li>
+								<li class="nav__item"><a href="#" class="nav__link">Салоны</a></li>
+								<li class="nav__item"><a href="#" class="nav__link">Работы</a></li>
+								<li class="nav__item"><a href="#" class="nav__link">Заказы</a></li>
+								<li class="nav__item"><a href="#" class="nav__link">Значения</a></li>
+								<li class="nav__item"><a href="#" class="nav__link nav__link--basket">Магазин</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section>
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-9">
+					<h1 class="h2">Магазин</h1>
+				</div>
+			</div>
+			<div class="filter mt">
+				<div class="row">
+					<div class="col-12 col-lg-7 col-xl-6">
+						<form action="" method="post">
+							<input type="text" name="" class="input filter__search" value="" placeholder="Поиск">
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 col-lg-4 col-xl-3 mt">
+					<h2 class="h5 mb">Каталог</h2>
+					<div class="submenu mb">
+						<div class="row">
+							<div class="col-12 col-sm-6 col-lg-12 submenu__item">
+								<a href="#" class="submenu__link">Тату машинки</a>
+							</div>
+							<div class="col-12 col-sm-6 col-lg-12 submenu__item">
+								<a href="#" class="submenu__link">Электрика</a>
+							</div>
+							<div class="col-12 col-sm-6 col-lg-12 submenu__item">
+								<a href="#" class="submenu__link">Держатели</a>
+							</div>
+							<div class="col-12 col-sm-6 col-lg-12 submenu__item">
+								<a href="#" class="submenu__link">Аксессуары и насадки для держателей</a>
+							</div>
+							<div class="col-12 col-sm-6 col-lg-12 submenu__item">
+								<a href="#" class="submenu__link">Трубки</a>
+							</div>
+							<div class="col-12 col-sm-6 col-lg-12 submenu__item">
+								<a href="#" class="submenu__link">Картриджи</a>
+							</div>
+							<div class="col-12 col-sm-6 col-lg-12 submenu__item">
+								<a href="#" class="submenu__link">Тату краски</a>
+							</div>
+							<div class="col-12 col-sm-6 col-lg-12 submenu__item">
+								<a href="#" class="submenu__link">Тату иглы</a>
+							</div>
+							<div class="col-12 col-sm-6 col-lg-12 submenu__item">
+								<a href="#" class="submenu__link">Резинки, ниппеля</a>
+							</div>
+							<div class="col-12 col-sm-6 col-lg-12 submenu__item">
+								<a href="#" class="submenu__link">Принадлежности для красок</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-lg-8 col-xl-9 mt">
+					<h2 class="h5 mb">Популярные товары</h2>
+					<div class="divider"></div>
+					<div class="catalog__items">
+						<!-- item -->
+						<div class="row catalog__item"> <!-- ID 001 -->
+							<div class="col-5 col-md-4 catalog__item-1">
+								<!-- ИЗОБРАЖЕНИЯ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+								<img class="catalog__image hide" src="upload/catalog/001-1.jpg" alt="" data-params="radio_color_001:1,radio_diametr_001:1,">
+								<img class="catalog__image hide" src="upload/catalog/001-2.jpg" alt="" data-params="radio_color_001:2,radio_diametr_001:1,">
+								<img class="catalog__image hide" src="upload/catalog/001-3.jpg" alt="" data-params="radio_color_001:1,radio_diametr_001:2,">
+								<img class="catalog__image hide" src="upload/catalog/001-4.jpg" alt="" data-params="radio_color_001:2,radio_diametr_001:2,">
+							</div>
+							<div class="col-7 col-md-5 catalog__item-2">
+								<div class="catalog__shop"><a href="#" class="catalog__shop-link">MT Mustang Tattoo</a></div>
+								<div class="catalog__name"><a href="#" class="catalog__name-link" data-name="Тату машинка Element">Тату машинка Element</a></div>
+								<div class="catalog__stars stars">
+									<div class="stars__items stars__items--transparent stars__items--1"><span></span><span></span><span></span><span></span><span></span></div>
+								</div>
+								<div class="catalog__params">
+									<div class="catalog__params-group">
+										<p>Цвет:</p>
+										<div><!--
+											--><input type="radio" name="radio_color_001" class="catalog__radio" data-name="красный Неон" id="radio_color_001-1" value="1" checked><!--
+											--><label for="radio_color_001-1" class="catalog__radio-label catalog__radio-label--color"><span style="background-color:#DE2104;"></span></label><!--
+											--><input type="radio" name="radio_color_001" class="catalog__radio" data-name="черный Неон" id="radio_color_001-2" value="2"><!--
+											--><label for="radio_color_001-2" class="catalog__radio-label catalog__radio-label--color" style="background-color: gold;"><span style="background-color:#000000;"></span></label><!--
+										--></div>
+									</div>
+									<div class="catalog__params-group">
+										<p>Диаметр:</p>
+										<div><!--
+											--><input type="radio" name="radio_diametr_001" class="catalog__radio" data-name="21 мм" id="radio_diametr_001-1" value="1" checked><!--
+											--><label for="radio_diametr_001-1" class="catalog__radio-label">21 мм</label><!--
+											--><input type="radio" name="radio_diametr_001" class="catalog__radio" data-name="25 мм" id="radio_diametr_001-2" value="2"><!--
+											--><label for="radio_diametr_001-2" class="catalog__radio-label">25 мм</label><!--
+										--></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-md-3 catalog__item-3">
+								<div class="row">
+									<div class="col-5 d-md-none">
+										<div class="catalog__desc">
+											<a href="#" class="catalog__desc-rating">50 к рейтингу</a>
+											<a href="#" class="catalog__desc-cert">Сертифицирован</a>
+										</div>
+									</div>
+									<div class="col-7 col-md-12">
+										<!-- ЦЕНЫ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+										<div class="catalog__cost" data-params="radio_color_001:1,radio_diametr_001:1,">11 000 ₽</div>
+										<div class="catalog__cost" data-params="radio_color_001:2,radio_diametr_001:1,">12 000 ₽</div>
+										<div class="catalog__cost" data-params="radio_color_001:1,radio_diametr_001:2,">13 000 ₽</div>
+										<div class="catalog__cost" data-params="radio_color_001:2,radio_diametr_001:2,">14 000 ₽</div>
+										<!-- СКИДКИ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+										<div class="catalog__discont" data-params="radio_color_001:1,radio_diametr_001:1,"><span>−17%</span> 15 000 ₽</div>
+										<!-- <div class="catalog__discont" data-params="radio_color_001:2,radio_diametr_001:1,"><span>−18%</span> 16 000 ₽</div> -->
+										<!-- <div class="catalog__discont" data-params="radio_color_001:1,radio_diametr_001:2,"><span>−19%</span> 17 000 ₽</div> -->
+										<div class="catalog__discont" data-params="radio_color_001:2,radio_diametr_001:2,"><span>−20%</span> 18 000 ₽</div>
+										<div class="d-none d-md-block catalog__desc">
+											<a href="#" class="catalog__desc-rating">50 к рейтингу</a>
+											<a href="#" class="catalog__desc-cert">Сертифицирован</a>
+										</div>
+										<div class="catalog__button">
+											<!-- КНОПКИ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+											<a href="#" class="btn btn--red btn--w100 catalog__button-link hide" data-params="radio_color_001:1,radio_diametr_001:1,">В корзину</a>
+											<a href="#" class="btn btn--red btn--w100 catalog__button-link hide" data-params="radio_color_001:2,radio_diametr_001:1,">В корзину</a>
+											<a href="#" class="btn btn--red btn--w100 catalog__button-link hide" data-params="radio_color_001:1,radio_diametr_001:2,">В корзину</a>
+											<a href="#" class="btn btn--gray btn--w100 catalog__button-link hide" data-params="radio_color_001:2,radio_diametr_001:2,">Уведомить</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /item -->
+						<!-- item -->
+						<div class="row catalog__item"> <!-- ID 002 -->
+							<div class="col-5 col-md-4 catalog__item-1">
+								<!-- ИЗОБРАЖЕНИЯ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+								<img class="catalog__image hide" src="upload/catalog/002.jpg" alt="" data-params="radio_diametr_002:1,radio_igli_002:1,radio_zatochka_002:1,radio_upakovka_002:1,">
+							</div>
+							<div class="col-7 col-md-5 catalog__item-2">
+								<div class="catalog__shop"><a href="#" class="catalog__shop-link">Worldfamoustattooink</a></div>
+								<div class="catalog__name"><a href="#" class="catalog__name-link" data-name="Тату иглы Blitz Magnum">Тату иглы Blitz Magnum</a></div>
+								<div class="catalog__stars stars">
+									<div class="stars__items stars__items--transparent stars__items--4"><span></span><span></span><span></span><span></span><span></span></div>
+								</div>
+								<div class="catalog__params">
+									<div class="catalog__params-group">
+										<p>Диаметр:</p>
+										<div><!--
+											--><input type="radio" name="radio_diametr_002" class="catalog__radio" data-name="Диаметр 10 мм" id="radio_diametr_002-1" value="1" checked><!--
+											--><label for="radio_diametr_002-1" class="catalog__radio-label">10 мм</label><!--
+											--><input type="radio" name="radio_diametr_002" class="catalog__radio" data-name="Диаметр 12 мм" id="radio_diametr_002-2" value="2"><!--
+											--><label for="radio_diametr_002-2" class="catalog__radio-label">12 мм</label><!--
+										--></div>
+									</div>
+									<div class="catalog__params-group">
+										<p>Иглы:</p>
+										<div><!--
+											--><input type="radio" name="radio_igli_002" class="catalog__radio" data-name="Иглы 5" id="radio_igli_002-1" value="1" checked><!--
+											--><label for="radio_igli_002-1" class="catalog__radio-label">5</label><!--
+											--><input type="radio" name="radio_igli_002" class="catalog__radio" data-name="Иглы 7" id="radio_igli_002-2" value="2"><!--
+											--><label for="radio_igli_002-2" class="catalog__radio-label">7</label><!--
+											--><input type="radio" name="radio_igli_002" class="catalog__radio" data-name="Иглы 9" id="radio_igli_002-3" value="3"><!--
+											--><label for="radio_igli_002-3" class="catalog__radio-label">9</label><!--
+											--><input type="radio" name="radio_igli_002" class="catalog__radio" data-name="Иглы 11" id="radio_igli_002-4" value="4"><!--
+											--><label for="radio_igli_002-4" class="catalog__radio-label">11</label><!--
+											--><input type="radio" name="radio_igli_002" class="catalog__radio" data-name="Иглы 13" id="radio_igli_002-5" value="5"><!--
+											--><label for="radio_igli_002-5" class="catalog__radio-label">13</label><!--
+											--><input type="radio" name="radio_igli_002" class="catalog__radio" data-name="Иглы 15" id="radio_igli_002-6" value="6"><!--
+											--><label for="radio_igli_002-6" class="catalog__radio-label">15</label><!--
+										--></div>
+									</div>
+									<div class="catalog__params-group">
+										<p>Заточка игл (Taper):</p>
+										<div><!--
+											--><input type="radio" name="radio_zatochka_002" class="catalog__radio" data-name="Taper BP XLT" id="radio_zatochka_002-1" value="1" checked><!--
+											--><label for="radio_zatochka_002-1" class="catalog__radio-label">BP XLT</label><!--
+											--><input type="radio" name="radio_zatochka_002" class="catalog__radio" data-name="Taper TLT" id="radio_zatochka_002-2" value="2"><!--
+											--><label for="radio_zatochka_002-2" class="catalog__radio-label">TLT</label><!--
+											--><input type="radio" name="radio_zatochka_002" class="catalog__radio" data-name="Taper TMT" id="radio_zatochka_002-3" value="3"><!--
+											--><label for="radio_zatochka_002-3" class="catalog__radio-label">TMT</label><!--
+											--><input type="radio" name="radio_zatochka_002" class="catalog__radio" data-name="Taper XTLT" id="radio_zatochka_002-4" value="4"><!--
+											--><label for="radio_zatochka_002-4" class="catalog__radio-label">XTLT</label><!--
+										--></div>
+									</div>
+									<div class="catalog__params-group">
+										<p>Упаковка:</p>
+										<div><!--
+											--><input type="radio" name="radio_upakovka_002" class="catalog__radio" data-name="50 шт." id="radio_upakovka_002-1" value="1" checked><!--
+											--><label for="radio_upakovka_002-1" class="catalog__radio-label">50 шт.</label><!--
+											--><input type="radio" name="radio_upakovka_002" class="catalog__radio" data-name="25 шт." id="radio_upakovka_002-2" value="2"><!--
+											--><label for="radio_upakovka_002-2" class="catalog__radio-label">25 шт.</label><!--
+										--></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-md-3 catalog__item-3">
+								<div class="row">
+									<div class="col-5 d-md-none">
+										<div class="catalog__desc">
+											<a href="#" class="catalog__desc-rating">50 к рейтингу</a>
+											<a href="#" class="catalog__desc-cert">Сертифицирован</a>
+										</div>
+									</div>
+									<div class="col-7 col-md-12">
+										<!-- ЦЕНЫ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+										<div class="catalog__cost" data-params="radio_diametr_002:1,radio_igli_002:1,radio_zatochka_002:1,radio_upakovka_002:1,">15 700 ₽</div>
+										<!-- ТУТ НАДО ПЕРЕЧИСЛИТЬ ВСЕ КОМБИНАЦИИ ЦЕН -->
+										<!-- СКИДКИ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+										<!-- <div class="catalog__discont" data-params="radio_diametr_002:1,radio_igli_002:1,radio_zatochka_002:1,radio_upakovka_002:1,"><span>−17%</span> 15 000 ₽</div> -->
+										<!-- ТУТ НАДО ПЕРЕЧИСЛИТЬ ВСЕ КОМБИНАЦИИ СКИДОК, ЕСЛИ ЕСТЬ -->
+										<div class="d-none d-md-block catalog__desc">
+											<a href="#" class="catalog__desc-rating">50 к рейтингу</a>
+											<a href="#" class="catalog__desc-cert">Сертифицирован</a>
+										</div>
+										<div class="catalog__button">
+											<!-- КНОПКИ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+											<a href="#" class="btn btn--red btn--w100 catalog__button-link hide" data-params="radio_diametr_002:1,radio_igli_002:1,radio_zatochka_002:1,radio_upakovka_002:1,">В корзину</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /item -->
+						<!-- item -->
+						<div class="row catalog__item"> <!-- ID 003 -->
+							<div class="col-5 col-md-4 catalog__item-1">
+								<!-- ИЗОБРАЖЕНИЯ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+								<img class="catalog__image hide" src="upload/catalog/003-1.jpg" alt="" data-params="radio_fasovka_003:1,">
+								<img class="catalog__image hide" src="upload/catalog/003-2.jpg" alt="" data-params="radio_fasovka_003:2,">
+								<img class="catalog__image hide" src="upload/catalog/003-3.jpg" alt="" data-params="radio_fasovka_003:3,">
+								<img class="catalog__image hide" src="upload/catalog/003-4.jpg" alt="" data-params="radio_fasovka_003:4,">
+								<!-- <img class="catalog__image hide" src="upload/catalog/003-5.jpg" alt="" data-params="radio_fasovka_003:5,"> -->
+							</div>
+							<div class="col-7 col-md-5 catalog__item-2">
+								<div class="catalog__shop"><a href="#" class="catalog__shop-link">Worldfamoustattooink</a></div>
+								<div class="catalog__name"><a href="#" class="catalog__name-link" data-name="Краска Eternal White">Краска Eternal White</a></div>
+								<div class="catalog__stars stars">
+									<div class="stars__items stars__items--transparent stars__items--0"><span></span><span></span><span></span><span></span><span></span></div>
+								</div>
+								<div class="catalog__params">
+									<div class="catalog__params-group">
+										<p>Фасовка:</p>
+										<div><!--
+											--><input type="radio" name="radio_fasovka_003" class="catalog__radio" data-name="1/2 Oz (15 мл)" id="radio_fasovka_003-1" value="1" checked><!--
+											--><label for="radio_fasovka_003-1" class="catalog__radio-label">1/2 Oz (15 мл)</label><!--
+											--><input type="radio" name="radio_fasovka_003" class="catalog__radio" data-name="1 Oz (30 мл)" id="radio_fasovka_003-2" value="2"><!--
+											--><label for="radio_fasovka_003-2" class="catalog__radio-label">1 Oz (30 мл)</label><!--
+											--><input type="radio" name="radio_fasovka_003" class="catalog__radio" data-name="2 Oz (60 мл)" id="radio_fasovka_003-3" value="3"><!--
+											--><label for="radio_fasovka_003-3" class="catalog__radio-label">2 Oz (60 мл)</label><!--
+											--><input type="radio" name="radio_fasovka_003" class="catalog__radio" data-name="4 Oz (120 мл)" id="radio_fasovka_003-4" value="4"><!--
+											--><label for="radio_fasovka_003-4" class="catalog__radio-label">4 Oz (120 мл)</label><!--
+											--><input type="radio" name="radio_fasovka_003" class="catalog__radio" data-name="8 Oz (240 мл)" id="radio_fasovka_003-5" value="5"><!--
+											--><label for="radio_fasovka_003-5" class="catalog__radio-label">8 Oz (240 мл)</label><!--
+										--></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-md-3 catalog__item-3">
+								<div class="row">
+									<div class="col-5 d-md-none">
+										<div class="catalog__desc">
+											<a href="#" class="catalog__desc-rating">50 к рейтингу</a>
+											<a href="#" class="catalog__desc-cert">Сертифицирован</a>
+										</div>
+									</div>
+									<div class="col-7 col-md-12">
+										<!-- ЦЕНЫ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+										<div class="catalog__cost" data-params="radio_fasovka_003:1,">11 100 ₽</div>
+										<div class="catalog__cost" data-params="radio_fasovka_003:2,">12 300 ₽</div>
+										<div class="catalog__cost" data-params="radio_fasovka_003:3,">13 500 ₽</div>
+										<div class="catalog__cost" data-params="radio_fasovka_003:4,">14 100 ₽</div>
+										<div class="catalog__cost" data-params="radio_fasovka_003:5,">15 300 ₽</div>
+										<!-- СКИДКИ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+										<div class="catalog__discont" data-params="radio_fasovka_003:2,"><span>−17%</span> 15 000 ₽</div>
+										<div class="d-none d-md-block catalog__desc">
+											<a href="#" class="catalog__desc-rating">50 к рейтингу</a>
+											<a href="#" class="catalog__desc-cert">Сертифицирован</a>
+										</div>
+										<div class="catalog__button">
+											<!-- КНОПКИ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+											<a href="#" class="btn btn--red btn--w100 catalog__button-link hide" data-params="radio_fasovka_003:1,">В корзину</a>
+											<a href="#" class="btn btn--gray btn--w100 catalog__button-link hide" data-params="radio_fasovka_003:2,">Уведомить</a>
+											<a href="#" class="btn btn--red btn--w100 catalog__button-link hide" data-params="radio_fasovka_003:3,">В корзину</a>
+											<a href="#" class="btn btn--gray btn--w100 catalog__button-link hide" data-params="radio_fasovka_003:4,">Уведомить</a>
+											<a href="#" class="btn btn--red btn--w100 catalog__button-link hide" data-params="radio_fasovka_003:5,">В корзину</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /item -->
+						<!-- item -->
+						<div class="row catalog__item catalog__item--not-available">
+							<div class="col-5 col-md-4 catalog__item-1">
+								<!-- ИЗОБРАЖЕНИЯ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ -->
+								<img class="catalog__image hide" src="upload/catalog/004.jpg" alt="">
+							</div>
+							<div class="col-7 col-md-5 catalog__item-2">
+								<div class="catalog__shop"><a href="#" class="catalog__shop-link">World Famous </a></div>
+								<div class="catalog__name"><a href="#" class="catalog__name-link" data-name="Тату краски Linig and Shading Set 1 унция">Тату краски Linig and Shading Set 1 унция</a></div>
+								<div class="catalog__stars stars">
+									<div class="stars__items stars__items--transparent stars__items--4"><span></span><span></span><span></span><span></span><span></span></div>
+								</div>
+								<div class="catalog__params">
+									<div class="catalog__params-group">
+										<p>Нет в наличии</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-md-3 catalog__item-3">
+								<div class="row">
+									<div class="col-5 d-md-none">
+										<div class="catalog__desc">
+											<a href="#" class="catalog__desc-cert">Сертифицирован</a>
+										</div>
+									</div>
+									<div class="col-7 col-md-12">
+										<!-- ЦЕНЫ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ -->
+										<div class="catalog__cost">12 300 ₽</div>
+										<div class="d-none d-md-block catalog__desc">
+											<a href="#" class="catalog__desc-cert">Сертифицирован</a>
+										</div>
+										<div class="catalog__button">
+											<!-- КНОПКИ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ -->
+											<a href="#" class="btn btn--gray btn--w100 catalog__button-link hide">Уведомить</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /item -->
+					</div>
+					<div class="row align-items-center">
+						<div class="col-12 mt">
+							<a href="#" class="btn btn--w100 works-more">Показать ещё</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer mt">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-lg-6 footer__left">
+					<div class="row nav-footer">
+						<div class="col-6 col-sm-4"><a href="#" class="nav-footer__link">Мастера</a></div>
+						<div class="col-6 col-sm-4"><a href="#" class="nav-footer__link">Салоны</a></div>
+						<div class="col-6 col-sm-4"><a href="#" class="nav-footer__link">Работы</a></div>
+						<div class="col-6 col-sm-4"><a href="#" class="nav-footer__link">Заказы</a></div>
+						<div class="col-6 col-sm-4"><a href="#" class="nav-footer__link">Значения</a></div>
+						<div class="col-6 col-sm-4"><a href="#" class="nav-footer__link">Магазин</a></div>
+					</div>
+				</div>
+				<div class="col-12 col-lg-6 footer__right">
+					<div class="social"><!--
+						--><a href="#" target="_blank" class="social__item social__item--vk"><i class="fab fa-vk"></i></a><!--
+						--><a href="#" target="_blank" class="social__item social__item--facebook"><i class="fab fa-facebook-f"></i></a><!--
+						--><a href="#" target="_blank" class="social__item social__item--twitter"><i class="fab fa-twitter"></i></a><!--
+						--><a href="#" target="_blank" class="social__item social__item--instagram"><i class="fab fa-instagram"></i></a><!--
+						--><a href="#" target="_blank" class="social__item social__item--ok"><i class="fab fa-odnoklassniki"></i></a><!--
+						--><a href="#" target="_blank" class="social__item social__item--youtube"><i class="fab fa-youtube"></i></a><!--
+						--><a href="#" target="_blank" class="social__item social__item--telegram"><i class="fab fa-telegram-plane"></i></a><!--
+					--></div>
+					<div class="copy">© RusTattoo, 2020</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<div class="write-admin">
+		<a href="#" class="write-admin__link"><span>Нужна помощь?</span></a>
+	</div>
+	<div id="thank" class="popup">
+		<div class="popup__inner">
+			<p>Спасибо! Мы принияли вашу заявку,<br>менеджер вам перезвонит.</p>
+		</div>
+	</div>
+	<a href="#" data-fancybox data-src="#thank" class="hide" id="thank_link"></a>
+
+	<div id="filter_map" class="popup">
+		<div class="popup__inner">
+			Выбор на карте
+		</div>
+	</div>
+
+	<div id="filter_filters" class="popup popup--filter">
+		<div class="popup__inner">
+			<h3>Фильтры</h3>
+			<form action="/" name="" class="mt" id="form_filter">
+				<div class="filter__group">
+					<div class="filter__group-title pt pb">Стиль</div>
+					<div class="filter__group-data">
+						<div class="form__checkbox"><label><input type="checkbox" value="1" class="checkbox" data-name="3D">3D</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="2" class="checkbox" data-name="Абстракционизм">Абстракционизм</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="3" class="checkbox" data-name="Авторский">Авторский</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="4" class="checkbox" data-name="Акварель">Акварель</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="5" class="checkbox" data-name="Биомеханика">Биомеханика</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="6" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="7" class="checkbox" data-name="Вип Шейдинг">Вип Шейдинг</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="8" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+					</div>
+				</div>
+				<div class="filter__group">
+					<div class="filter__group-title pt pb">Место</div>
+					<div class="filter__group-data">
+						<div class="form__checkbox"><label><input type="checkbox" value="9" class="checkbox" data-name="3D">3D</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="10" class="checkbox" data-name="Абстракционизм">Абстракционизм</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="11" class="checkbox" data-name="Авторский">Авторский</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="12" class="checkbox" data-name="Акварель">Акварель</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="13" class="checkbox" data-name="Биомеханика">Биомеханика</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="14" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="15" class="checkbox" data-name="Вип Шейдинг">Вип Шейдинг</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="16" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+					</div>
+				</div>
+				<div class="filter__group">
+					<div class="filter__group-title pt pb">Тип</div>
+					<div class="filter__group-data">
+						<div class="form__checkbox"><label><input type="checkbox" value="17" class="checkbox" data-name="3D">3D</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="18" class="checkbox" data-name="Абстракционизм">Абстракционизм</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="19" class="checkbox" data-name="Авторский">Авторский</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="20" class="checkbox" data-name="Акварель">Акварель</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="21" class="checkbox" data-name="Биомеханика">Биомеханика</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="22" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="23" class="checkbox" data-name="Вип Шейдинг">Вип Шейдинг</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="24" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+					</div>
+				</div>
+				<div class="filter__group">
+					<div class="filter__group-title pt pb">Значение</div>
+					<div class="filter__group-data">
+						<div class="form__checkbox"><label><input type="checkbox" value="25" class="checkbox" data-name="3D">3D</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="26" class="checkbox" data-name="Абстракционизм">Абстракционизм</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="27" class="checkbox" data-name="Авторский">Авторский</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="28" class="checkbox" data-name="Акварель">Акварель</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="29" class="checkbox" data-name="Биомеханика">Биомеханика</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="30" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="31" class="checkbox" data-name="Вип Шейдинг">Вип Шейдинг</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="32" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+					</div>
+				</div>
+				<div class="form__buttons">
+					<div class="row">
+						<div class="col-6">
+							<input type="reset" class="btn btn--w100 btn--transparent" value="Сбросить">
+						</div>
+						<div class="col-6">
+							<input type="submit" class="btn btn--w100" value="Применить">
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div id="filter_catalog" class="popup popup--filter">
+		<div class="popup__inner">
+			<h3>Фильтры</h3>
+			<form action="/" name="" class="mt" id="form_filter_catalog">
+				<div class="filter__group">
+					<div class="filter__group-title pt pb">Тип</div>
+					<div class="filter__group-data">
+						<div class="form__checkbox"><label><input type="checkbox" value="1" class="checkbox" data-name="Индукционные">Индукционные</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="2" class="checkbox" data-name="Роторные">Роторные</label></div>
+					</div>
+				</div>
+				<div class="filter__group">
+					<div class="filter__group-title pt pb">Бренд</div>
+					<div class="filter__group-data">
+						<div class="form__checkbox"><label><input type="checkbox" value="1" class="checkbox" data-name="ArtDriver Tattoo Machine">ArtDriver Tattoo Machine</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="2" class="checkbox" data-name="Barmaley Machines">Barmaley Machines</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="3" class="checkbox" data-name="Burlak Machines">Burlak Machines</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="4" class="checkbox" data-name="BUZZ Rotary">BUZZ Rotary</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="5" class="checkbox" data-name="Critical Tattoo Machine">Critical Tattoo Machine</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="6" class="checkbox" data-name="Cheyenne">Cheyenne</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="7" class="checkbox" data-name="Diablo Rotary">Diablo Rotary</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="8" class="checkbox" data-name="Dragonfly X2">Dragonfly X2</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="9" class="checkbox" data-name="EGO">EGO</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="10" class="checkbox" data-name="Elite Pen">Elite Pen</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="11" class="checkbox" data-name="Odds And Ends">Odds And Ends</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="12" class="checkbox" data-name="Handy Help">Handy Help</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="13" class="checkbox" data-name="Knick Knacks">Knick Knacks</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="14" class="checkbox" data-name="Nick’S Knacks">Nick’S Knacks</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="15" class="checkbox" data-name="Et Cetera Systems">Et Cetera Systems</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="16" class="checkbox" data-name="Closet Of Choices">Closet Of Choices</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="17" class="checkbox" data-name="Assorted Assets">Assorted Assets</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="18" class="checkbox" data-name="Trusted Assortment">Trusted Assortment</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="19" class="checkbox" data-name="Applicable Assortment">Applicable Assortment</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="20" class="checkbox" data-name="Resource Refresh">Resource Refresh</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="21" class="checkbox" data-name="Random Refresh">Random Refresh</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="22" class="checkbox" data-name="The Source">The Source</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="23" class="checkbox" data-name="Complete Collection">Complete Collection</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="24" class="checkbox" data-name="Terrific Tchotchkes">Terrific Tchotchkes</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="24" class="checkbox" data-name="Sporadic Systems">Sporadic Systems</label></div>
+					</div>
+				</div>
+				<div class="filter__group">
+					<div class="filter__group-title pt pb">Страна производитель</div>
+					<div class="filter__group-data">
+						<div class="form__checkbox"><label><input type="checkbox" value="1" class="checkbox" data-name="Польша">Польша</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="2" class="checkbox" data-name="Россия">Россия</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="3" class="checkbox" data-name="США">США</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="4" class="checkbox" data-name="Украина">Украина</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="5" class="checkbox" data-name="Великобритания">Великобритания</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="6" class="checkbox" data-name="КНР">КНР</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="7" class="checkbox" data-name="Тайвань">Тайвань</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="8" class="checkbox" data-name="Германия">Германия</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="9" class="checkbox" data-name="Венгрия">Венгрия</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="10" class="checkbox" data-name="Швеция">Швеция</label></div>
+					</div>
+				</div>
+				<div class="form__buttons">
+					<div class="row">
+						<div class="col-6">
+							<input type="reset" class="btn btn--w100 btn--transparent" value="Сбросить">
+						</div>
+						<div class="col-6">
+							<input type="submit" class="btn btn--w100" value="Применить">
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div id="messages" class="popup popup--messages">
+		<div class="popup__inner dialogs">
+			<div class="popup__header">
+				<h3>Сообщения</h3>
+			</div>
+			<!-- <div class="messages__dialogs messages__dialogs--empty"> --> <!-- ЕСЛИ ДИАЛОГОВ НЕТ -->
+			<div class="messages__dialogs">
+				<div class="messages__dialog" data-dialog="1">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/006.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Вероника Кравчинская</div>
+									<div class="author__message">И со мной она так же обошлась! Ха...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"><span>3</span></div>
+							<div class="message__date">01:15</div>
+						</div>
+					</div>
+				</div>
+				<div class="messages__dialog" data-dialog="2">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/007.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Артур Джебко</div>
+									<div class="author__message">Вы НИ когда не были нашим клиен...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"><span>1</span></div>
+							<div class="message__date">Вчера</div>
+						</div>
+					</div>
+				</div>
+				<div class="messages__dialog" data-dialog="3">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/002.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Виктория Третьякова</div>
+									<div class="author__message">Кто бы что не говорил, а татуировк...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"></div>
+							<div class="message__date">Вс</div>
+						</div>
+					</div>
+				</div>
+				<div class="messages__dialog" data-dialog="4">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/005.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Мадина Шмидт</div>
+									<div class="author__message">Я мечтала о татуировке лет с 18, оч...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"></div>
+							<div class="message__date">31.12.19</div>
+						</div>
+					</div>
+				</div>
+				<div class="messages__dialog" data-dialog="1">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/006.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Вероника Кравчинская</div>
+									<div class="author__message">И со мной она так же обошлась! Ха...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"></div>
+							<div class="message__date">01:15</div>
+						</div>
+					</div>
+				</div>
+				<div class="messages__dialog" data-dialog="2">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/007.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Артур Джебко</div>
+									<div class="author__message">Вы НИ когда не были нашим клиен...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"></div>
+							<div class="message__date">Вчера</div>
+						</div>
+					</div>
+				</div>
+				<div class="messages__dialog" data-dialog="3">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/002.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Виктория Третьякова</div>
+									<div class="author__message">Кто бы что не говорил, а татуировк...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"></div>
+							<div class="message__date">Вс</div>
+						</div>
+					</div>
+				</div>
+				<div class="messages__dialog" data-dialog="4">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/005.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Мадина Шмидт</div>
+									<div class="author__message">Я мечтала о татуировке лет с 18, оч...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"></div>
+							<div class="message__date">31.12.19</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup__inner dialog">
+			<div class="popup__header">
+				<a href="#" class="back-to-dialogs"></a>
+				<a href="#" class="dialog__author author author--40">
+					<div class="author__image">
+						<div class="author__photo ibg"><img src="upload/users/006.jpg" alt=""></div>
+					</div>
+					<div class="author__data">
+						<div class="author__name">Вероника Кравчинская</div>
+					</div>
+				</a>
+			</div>
+			<div class="messages__messages">
+				<div class="messages__messages-inner">
+					<div class="dialog__date"><span>16 февраля</span></div>
+					<div class="dialog__message dialog__message--apponent">
+						<div>И со мной она так же обошлась! Хамит, клиентов не ценит.В её салоне в Симферополе по улице Казанская, 30 работает Андрей, который водит меня за нос уже целый год и никак не хочу доделать свою работу.</div>
+						<span>00:58</span>
+					</div>
+					<div class="dialog__message dialog__message--apponent">
+						<img src="upload/masonry/004.jpg" alt="">
+						<span>00:59</span>
+					</div>
+					<div class="dialog__message dialog__message--you">
+						<div>Вы НИ когда не были нашим клиентом. И это прекрасно! Спасибо за чёрный пиар))) Всего наилучшего)</div>
+						<span>01:15</span>
+					</div>
+					<div class="dialog__message dialog__message--apponent">
+						<div>И со мной она так же обошлась! Хамит, клиентов не ценит.В её салоне в Симферополе по улице Казанская, 30 работает Андрей, который водит меня за нос уже целый год и никак не хочу доделать свою работу.</div>
+						<span>00:58</span>
+					</div>
+					<div class="dialog__message dialog__message--you">
+						<div>Вы НИ когда не были нашим клиентом. И это прекрасно! Спасибо за чёрный пиар))) Всего наилучшего)</div>
+						<span>01:15</span>
+					</div>
+					<div class="dialog__message dialog__message--you">
+						<div>Вы НИ когда не были нашим клиентом. И это прекрасно! Спасибо за чёрный пиар))) Всего наилучшего)</div>
+						<span>01:15</span>
+					</div>
+					<div class="dialog__message dialog__message--you">
+						<img src="upload/masonry/002.jpg" alt="">
+						<span>01:15</span>
+					</div>
+				</div>
+			</div>
+			<div class="popup__footer">
+				<form action="/" method="post" class="dialog__form">
+					<input type="file" name="dialog__file">
+					<textarea name="" value="" id="dialog__textarea" class="textarea" placeholder="Сообщение" class="textarea"></textarea>
+					<input type="submit" value="">
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="login_form" class="popup">
+		<div class="popup__inner">
+			<div class="mb text-align-center">
+				<a href="javascript:;" class="btn" id="auth">Авторизоваться</a>
+			</div>
+			<div class="auth">
+				<a href="#" class="auth__item auth__item--vk">
+					<i class="fab fa-vk"></i>
+				</a>
+				<a href="#" class="auth__item auth__item--facebook">
+					<i class="fab fa-facebook-f"></i>
+				</a>
+				<a href="#" class="auth__item auth__item--instagram">
+					<i class="fab fa-instagram"></i>
+				</a>
+				<a href="#" class="auth__item auth__item--yandex">
+					<i class="fab fa-yandex"></i>
+				</a>
+				<a href="#" class="auth__item auth__item--google">
+					<i class="fab fa-google"></i>
+				</a>
+				<a href="#" class="auth__item auth__item--mailru">
+					<i class="fas fa-at"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery -->
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<!-- recliner -->
+	<script src="js/recliner.min.js"></script>
+	<!-- prefixfree -->
+	<script src="js/prefixfree.min.js"></script>
+	<!-- slick -->
+	<script src="plugins/slick-1.8.1/slick.min.js"></script>
+	<!-- fancybox -->
+	<script src="plugins/fancybox-master/jquery.fancybox.min.js"></script>
+	<!-- chosen -->
+	<script src="plugins/chosen_v1.8.7/chosen.jquery.min.js"></script>
+	<!-- mansory -->
+	<script src="plugins/mp-mansory/mp.mansory.js"></script>
+	<!-- dropzone -->
+	<script src="plugins/dropzone/dropzone.js"></script>
+	<!-- mask -->
+	<script src="plugins/jQuery-Mask-Plugin-master/jquery.mask.min.js"></script>
+	<!-- growl -->
+	<script src="plugins/jquery.growl/jquery.growl.js"></script>
+	<!-- user script -->
+	<script src="script.js"></script>
+
+</body>
+</html>

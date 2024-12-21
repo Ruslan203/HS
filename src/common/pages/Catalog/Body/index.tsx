@@ -16,12 +16,14 @@ interface Brand {
     text: string;
     stars?: number;
     sold?: number;
-    slug: string;  // Добавляем поле slug
-    url: string;
-    quantity: number;
-    weight: number;
-    line: string;
+    slug: string;
+    // Удаляем поля url, quantity, weight и line
+    // url: string;
+    // quantity: number;
+    // weight: number;
+    // line: string;
 }
+
 // Определяем интерфейс для Model
 interface Model {
     applications: unknown;

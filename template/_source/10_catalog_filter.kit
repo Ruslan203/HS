@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+<!-- @import "_head.html" -->
+
+	<title>10 catalog filter</title>
+</head>
+<body>
+
+<!-- @import "_header.html" -->
+
+	<section>
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-9">
+					<h1 class="h2">Магазин</h1>
+				</div>
+			</div>
+			<div class="filter mt">
+				<div class="row">
+					<div class="col-9 col-md-10 col-lg-7 col-xl-6">
+						<form action="" method="post">
+							<input type="text" name="" class="input filter__search" value="" placeholder="Поиск">
+						</form>
+					</div>
+					<div class="col-3 col-md-2 d-lg-none">
+						<a href="javascript:;" data-fancybox data-src="#filter_catalog" data-options='{"baseClass": "fancybox-right", "touch": false}' class="btn btn--w100 btn--transparent filter__filters">Фильтры</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 col-lg-4 col-xl-3 d-none d-lg-block mt">
+					<div class="catalog__filter">
+						<div class="catalog__filter-group active">
+							<div class="catalog__filter-title">Тип</div>
+							<div class="filter__group-data">
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="1"][data-name="Индукционные"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="1" class="checkbox" data-name="Индукционные">Индукционные</label></div>
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="2"][data-name="Роторные"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="2" class="checkbox" data-name="Роторные">Роторные</label></div>
+							</div>
+						</div>
+						<div class="catalog__filter-group active">
+							<div class="catalog__filter-title">Бренд</div>
+							<div class="filter__group-data">
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="1"][data-name="ArtDriver Tattoo Machine"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="1" class="checkbox" data-name="ArtDriver Tattoo Machine">ArtDriver Tattoo Machine</label></div>
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="2"][data-name="Barmaley Machines"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="2" class="checkbox" data-name="Barmaley Machines">Barmaley Machines</label></div>
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="3"][data-name="Burlak Machines"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="3" class="checkbox" data-name="Burlak Machines">Burlak Machines</label></div>
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="4"][data-name="BUZZ Rotary"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="4" class="checkbox" data-name="BUZZ Rotary">BUZZ Rotary</label></div>
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="5"][data-name="Critical Tattoo Machine"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="5" class="checkbox" data-name="Critical Tattoo Machine">Critical Tattoo Machine</label></div>
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="6"][data-name="Cheyenne"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="6" class="checkbox" data-name="Cheyenne">Cheyenne</label></div>
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="7"][data-name="Diablo Rotary"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="7" class="checkbox" data-name="Diablo Rotary">Diablo Rotary</label></div>
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="8"][data-name="Dragonfly X2"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="8" class="checkbox" data-name="Dragonfly X2">Dragonfly X2</label></div>
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="9"][data-name="EGO"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="9" class="checkbox" data-name="EGO">EGO</label></div>
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="10"][data-name="Elite Pen"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="10" class="checkbox" data-name="Elite Pen">Elite Pen</label></div>
+								<div class="form__checkbox hide"><label data-click='#form_filter_catalog input[value="11"][data-name="Odds And Ends"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="11" class="checkbox" data-name="Odds And Ends">Odds And Ends</label></div>
+								<div class="form__checkbox hide"><label data-click='#form_filter_catalog input[value="12"][data-name="Handy Help"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="12" class="checkbox" data-name="Handy Help">Handy Help</label></div>
+								<div class="form__checkbox hide"><label data-click='#form_filter_catalog input[value="13"][data-name="Knick Knacks"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="13" class="checkbox" data-name="Knick Knacks">Knick Knacks</label></div>
+								<div class="form__checkbox hide"><label data-click='#form_filter_catalog input[value="14"][data-name="Nick’S Knacks"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="14" class="checkbox" data-name="Nick’S Knacks">Nick’S Knacks</label></div>
+								<div class="form__checkbox hide"><label data-click='#form_filter_catalog input[value="15"][data-name="Et Cetera Systems"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="15" class="checkbox" data-name="Et Cetera Systems">Et Cetera Systems</label></div>
+								<div class="form__checkbox hide"><label data-click='#form_filter_catalog input[value="16"][data-name="Closet Of Choices"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="16" class="checkbox" data-name="Closet Of Choices">Closet Of Choices</label></div>
+								<div class="form__checkbox hide"><label data-click='#form_filter_catalog input[value="17"][data-name="Assorted Assets"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="17" class="checkbox" data-name="Assorted Assets">Assorted Assets</label></div>
+								<div class="form__checkbox hide"><label data-click='#form_filter_catalog input[value="18"][data-name="Trusted Assortment"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="18" class="checkbox" data-name="Trusted Assortment">Trusted Assortment</label></div>
+								<div class="form__checkbox hide"><label data-click='#form_filter_catalog input[value="19"][data-name="Applicable Assortment"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="19" class="checkbox" data-name="Applicable Assortment">Applicable Assortment</label></div>
+								<div class="form__checkbox hide"><label data-click='#form_filter_catalog input[value="20"][data-name="Resource Refresh"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="20" class="checkbox" data-name="Resource Refresh">Resource Refresh</label></div>
+								<div class="form__checkbox hide"><label data-click='#form_filter_catalog input[value="21"][data-name="Random Refresh"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="21" class="checkbox" data-name="Random Refresh">Random Refresh</label></div>
+								<div class="form__checkbox hide"><label data-click='#form_filter_catalog input[value="22"][data-name="The Source"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="22" class="checkbox" data-name="The Source">The Source</label></div>
+								<div class="form__checkbox hide"><label data-click='#form_filter_catalog input[value="23"][data-name="Complete Collection"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="23" class="checkbox" data-name="Complete Collection">Complete Collection</label></div>
+								<div class="form__checkbox hide"><label data-click='#form_filter_catalog input[value="24"][data-name="Terrific Tchotchkes"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="24" class="checkbox" data-name="Terrific Tchotchkes">Terrific Tchotchkes</label></div>
+								<div class="form__checkbox hide"><label data-click='#form_filter_catalog input[value="24"][data-name="Sporadic Systems"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="24" class="checkbox" data-name="Sporadic Systems">Sporadic Systems</label></div>
+								<span class="filter__show-all">Показать ещё 15</span>
+							</div>
+						</div>
+						<div class="catalog__filter-group active">
+							<div class="catalog__filter-title">Страна производитель</div>
+							<div class="filter__group-data">
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="1"][data-name="Польша"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="1" class="checkbox" data-name="Польша">Польша</label></div>
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="2"][data-name="Россия"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="2" class="checkbox" data-name="Россия">Россия</label></div>
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="3"][data-name="США"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="3" class="checkbox" data-name="США">США</label></div>
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="4"][data-name="Украина"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="4" class="checkbox" data-name="Украина">Украина</label></div>
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="5"][data-name="Великобритания"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="5" class="checkbox" data-name="Великобритания">Великобритания</label></div>
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="6"][data-name="КНР"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="6" class="checkbox" data-name="КНР">КНР</label></div>
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="7"][data-name="Тайвань"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="7" class="checkbox" data-name="Тайвань">Тайвань</label></div>
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="8"][data-name="Германия"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="8" class="checkbox" data-name="Германия">Германия</label></div>
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="9"][data-name="Венгрия"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="9" class="checkbox" data-name="Венгрия">Венгрия</label></div>
+								<div class="form__checkbox"><label data-click='#form_filter_catalog input[value="10"][data-name="Швеция"],#form_filter_catalog input[type="submit"]'><input type="checkbox" value="10" class="checkbox" data-name="Швеция">Швеция</label></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-lg-8 col-xl-9 mt">
+					<div class="filter__positions-cont d-block">
+						<div class="row">
+							<div class="col-12">
+								<div class="filter__positions d-none mb"></div>
+							</div>
+							<div class="col-5 col-md-6">
+								<div class="filter__results">542 товара</div>
+							</div>
+							<div class="col-7 col-md-6 text-align-right">
+								<select name="" class="select select--light select--auto">
+									<option value="">Цена по возрастанию</option>
+									<option value="">Цена по убыванию</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="divider mt"></div>
+					<div class="catalog__items">
+						<!-- item -->
+						<div class="row catalog__item"> <!-- ID 001 -->
+							<div class="col-5 col-md-4 catalog__item-1">
+								<!-- ИЗОБРАЖЕНИЯ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+								<img class="catalog__image hide" src="upload/catalog/001-1.jpg" alt="" data-params="radio_color_001:1,radio_diametr_001:1,">
+								<img class="catalog__image hide" src="upload/catalog/001-2.jpg" alt="" data-params="radio_color_001:2,radio_diametr_001:1,">
+								<img class="catalog__image hide" src="upload/catalog/001-3.jpg" alt="" data-params="radio_color_001:1,radio_diametr_001:2,">
+								<img class="catalog__image hide" src="upload/catalog/001-4.jpg" alt="" data-params="radio_color_001:2,radio_diametr_001:2,">
+							</div>
+							<div class="col-7 col-md-5 catalog__item-2">
+								<div class="catalog__shop"><a href="#" class="catalog__shop-link">MT Mustang Tattoo</a></div>
+								<div class="catalog__name"><a href="#" class="catalog__name-link" data-name="Тату машинка Element">Тату машинка Element</a></div>
+								<div class="catalog__stars stars">
+									<div class="stars__items stars__items--transparent stars__items--1"><span></span><span></span><span></span><span></span><span></span></div>
+								</div>
+								<div class="catalog__params">
+									<div class="catalog__params-group">
+										<p>Цвет:</p>
+										<div><!--
+											--><input type="radio" name="radio_color_001" class="catalog__radio" data-name="красный Неон" id="radio_color_001-1" value="1" checked><!--
+											--><label for="radio_color_001-1" class="catalog__radio-label catalog__radio-label--color"><span style="background-color:#DE2104;"></span></label><!--
+											--><input type="radio" name="radio_color_001" class="catalog__radio" data-name="черный Неон" id="radio_color_001-2" value="2"><!--
+											--><label for="radio_color_001-2" class="catalog__radio-label catalog__radio-label--color"><span style="background-color:#000000;"></span></label><!--
+										--></div>
+									</div>
+									<div class="catalog__params-group">
+										<p>Диаметр:</p>
+										<div><!--
+											--><input type="radio" name="radio_diametr_001" class="catalog__radio" data-name="21 мм" id="radio_diametr_001-1" value="1" checked><!--
+											--><label for="radio_diametr_001-1" class="catalog__radio-label">21 мм</label><!--
+											--><input type="radio" name="radio_diametr_001" class="catalog__radio" data-name="25 мм" id="radio_diametr_001-2" value="2"><!--
+											--><label for="radio_diametr_001-2" class="catalog__radio-label">25 мм</label><!--
+										--></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-md-3 catalog__item-3">
+								<div class="row">
+									<div class="col-5 d-md-none">
+										<div class="catalog__desc">
+											<a href="#" class="catalog__desc-rating">50 к рейтингу</a>
+											<a href="#" class="catalog__desc-cert">Сертифицирован</a>
+										</div>
+									</div>
+									<div class="col-7 col-md-12">
+										<!-- ЦЕНЫ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+										<div class="catalog__cost" data-params="radio_color_001:1,radio_diametr_001:1,">11 000 ₽</div>
+										<div class="catalog__cost" data-params="radio_color_001:2,radio_diametr_001:1,">12 000 ₽</div>
+										<div class="catalog__cost" data-params="radio_color_001:1,radio_diametr_001:2,">13 000 ₽</div>
+										<div class="catalog__cost" data-params="radio_color_001:2,radio_diametr_001:2,">14 000 ₽</div>
+										<!-- СКИДКИ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+										<div class="catalog__discont" data-params="radio_color_001:1,radio_diametr_001:1,"><span>−17%</span> 15 000 ₽</div>
+										<!-- <div class="catalog__discont" data-params="radio_color_001:2,radio_diametr_001:1,"><span>−18%</span> 16 000 ₽</div> -->
+										<!-- <div class="catalog__discont" data-params="radio_color_001:1,radio_diametr_001:2,"><span>−19%</span> 17 000 ₽</div> -->
+										<div class="catalog__discont" data-params="radio_color_001:2,radio_diametr_001:2,"><span>−20%</span> 18 000 ₽</div>
+										<div class="d-none d-md-block catalog__desc">
+											<a href="#" class="catalog__desc-rating">50 к рейтингу</a>
+											<a href="#" class="catalog__desc-cert">Сертифицирован</a>
+										</div>
+										<div class="catalog__button">
+											<!-- КНОПКИ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+											<a href="#" class="btn btn--red btn--w100 catalog__button-link hide" data-params="radio_color_001:1,radio_diametr_001:1,">В корзину</a>
+											<a href="#" class="btn btn--red btn--w100 catalog__button-link hide" data-params="radio_color_001:2,radio_diametr_001:1,">В корзину</a>
+											<a href="#" class="btn btn--red btn--w100 catalog__button-link hide" data-params="radio_color_001:1,radio_diametr_001:2,">В корзину</a>
+											<a href="#" class="btn btn--gray btn--w100 catalog__button-link hide" data-params="radio_color_001:2,radio_diametr_001:2,">Уведомить</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /item -->
+						<!-- item -->
+						<div class="row catalog__item"> <!-- ID 002 -->
+							<div class="col-5 col-md-4 catalog__item-1">
+								<!-- ИЗОБРАЖЕНИЯ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+								<img class="catalog__image hide" src="upload/catalog/002.jpg" alt="" data-params="radio_diametr_002:1,radio_igli_002:1,radio_zatochka_002:1,radio_upakovka_002:1,">
+							</div>
+							<div class="col-7 col-md-5 catalog__item-2">
+								<div class="catalog__shop"><a href="#" class="catalog__shop-link">Worldfamoustattooink</a></div>
+								<div class="catalog__name"><a href="#" class="catalog__name-link" data-name="Тату иглы Blitz Magnum">Тату иглы Blitz Magnum</a></div>
+								<div class="catalog__stars stars">
+									<div class="stars__items stars__items--transparent stars__items--4"><span></span><span></span><span></span><span></span><span></span></div>
+								</div>
+								<div class="catalog__params">
+									<div class="catalog__params-group">
+										<p>Диаметр:</p>
+										<div><!--
+											--><input type="radio" name="radio_diametr_002" class="catalog__radio" data-name="Диаметр 10 мм" id="radio_diametr_002-1" value="1" checked><!--
+											--><label for="radio_diametr_002-1" class="catalog__radio-label">10 мм</label><!--
+											--><input type="radio" name="radio_diametr_002" class="catalog__radio" data-name="Диаметр 12 мм" id="radio_diametr_002-2" value="2"><!--
+											--><label for="radio_diametr_002-2" class="catalog__radio-label">12 мм</label><!--
+										--></div>
+									</div>
+									<div class="catalog__params-group">
+										<p>Иглы:</p>
+										<div><!--
+											--><input type="radio" name="radio_igli_002" class="catalog__radio" data-name="Иглы 5" id="radio_igli_002-1" value="1" checked><!--
+											--><label for="radio_igli_002-1" class="catalog__radio-label">5</label><!--
+											--><input type="radio" name="radio_igli_002" class="catalog__radio" data-name="Иглы 7" id="radio_igli_002-2" value="2"><!--
+											--><label for="radio_igli_002-2" class="catalog__radio-label">7</label><!--
+											--><input type="radio" name="radio_igli_002" class="catalog__radio" data-name="Иглы 9" id="radio_igli_002-3" value="3"><!--
+											--><label for="radio_igli_002-3" class="catalog__radio-label">9</label><!--
+											--><input type="radio" name="radio_igli_002" class="catalog__radio" data-name="Иглы 11" id="radio_igli_002-4" value="4"><!--
+											--><label for="radio_igli_002-4" class="catalog__radio-label">11</label><!--
+											--><input type="radio" name="radio_igli_002" class="catalog__radio" data-name="Иглы 13" id="radio_igli_002-5" value="5"><!--
+											--><label for="radio_igli_002-5" class="catalog__radio-label">13</label><!--
+											--><input type="radio" name="radio_igli_002" class="catalog__radio" data-name="Иглы 15" id="radio_igli_002-6" value="6"><!--
+											--><label for="radio_igli_002-6" class="catalog__radio-label">15</label><!--
+										--></div>
+									</div>
+									<div class="catalog__params-group">
+										<p>Заточка игл (Taper):</p>
+										<div><!--
+											--><input type="radio" name="radio_zatochka_002" class="catalog__radio" data-name="Taper BP XLT" id="radio_zatochka_002-1" value="1" checked><!--
+											--><label for="radio_zatochka_002-1" class="catalog__radio-label">BP XLT</label><!--
+											--><input type="radio" name="radio_zatochka_002" class="catalog__radio" data-name="Taper TLT" id="radio_zatochka_002-2" value="2"><!--
+											--><label for="radio_zatochka_002-2" class="catalog__radio-label">TLT</label><!--
+											--><input type="radio" name="radio_zatochka_002" class="catalog__radio" data-name="Taper TMT" id="radio_zatochka_002-3" value="3"><!--
+											--><label for="radio_zatochka_002-3" class="catalog__radio-label">TMT</label><!--
+											--><input type="radio" name="radio_zatochka_002" class="catalog__radio" data-name="Taper XTLT" id="radio_zatochka_002-4" value="4"><!--
+											--><label for="radio_zatochka_002-4" class="catalog__radio-label">XTLT</label><!--
+										--></div>
+									</div>
+									<div class="catalog__params-group">
+										<p>Упаковка:</p>
+										<div><!--
+											--><input type="radio" name="radio_upakovka_002" class="catalog__radio" data-name="50 шт." id="radio_upakovka_002-1" value="1" checked><!--
+											--><label for="radio_upakovka_002-1" class="catalog__radio-label">50 шт.</label><!--
+											--><input type="radio" name="radio_upakovka_002" class="catalog__radio" data-name="25 шт." id="radio_upakovka_002-2" value="2"><!--
+											--><label for="radio_upakovka_002-2" class="catalog__radio-label">25 шт.</label><!--
+										--></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-md-3 catalog__item-3">
+								<div class="row">
+									<div class="col-5 d-md-none">
+										<div class="catalog__desc">
+											<a href="#" class="catalog__desc-rating">50 к рейтингу</a>
+											<a href="#" class="catalog__desc-cert">Сертифицирован</a>
+										</div>
+									</div>
+									<div class="col-7 col-md-12">
+										<!-- ЦЕНЫ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+										<div class="catalog__cost" data-params="radio_diametr_002:1,radio_igli_002:1,radio_zatochka_002:1,radio_upakovka_002:1,">15 700 ₽</div>
+										<!-- ТУТ НАДО ПЕРЕЧИСЛИТЬ ВСЕ КОМБИНАЦИИ ЦЕН -->
+										<!-- СКИДКИ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+										<!-- <div class="catalog__discont" data-params="radio_diametr_002:1,radio_igli_002:1,radio_zatochka_002:1,radio_upakovka_002:1,"><span>−17%</span> 15 000 ₽</div> -->
+										<!-- ТУТ НАДО ПЕРЕЧИСЛИТЬ ВСЕ КОМБИНАЦИИ СКИДОК, ЕСЛИ ЕСТЬ -->
+										<div class="d-none d-md-block catalog__desc">
+											<a href="#" class="catalog__desc-rating">50 к рейтингу</a>
+											<a href="#" class="catalog__desc-cert">Сертифицирован</a>
+										</div>
+										<div class="catalog__button">
+											<!-- КНОПКИ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+											<a href="#" class="btn btn--red btn--w100 catalog__button-link hide" data-params="radio_diametr_002:1,radio_igli_002:1,radio_zatochka_002:1,radio_upakovka_002:1,">В корзину</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /item -->
+						<!-- item -->
+						<div class="row catalog__item"> <!-- ID 003 -->
+							<div class="col-5 col-md-4 catalog__item-1">
+								<!-- ИЗОБРАЖЕНИЯ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+								<img class="catalog__image hide" src="upload/catalog/003-1.jpg" alt="" data-params="radio_fasovka_003:1,">
+								<img class="catalog__image hide" src="upload/catalog/003-2.jpg" alt="" data-params="radio_fasovka_003:2,">
+								<img class="catalog__image hide" src="upload/catalog/003-3.jpg" alt="" data-params="radio_fasovka_003:3,">
+								<img class="catalog__image hide" src="upload/catalog/003-4.jpg" alt="" data-params="radio_fasovka_003:4,">
+								<!-- <img class="catalog__image hide" src="upload/catalog/003-5.jpg" alt="" data-params="radio_fasovka_003:5,"> -->
+							</div>
+							<div class="col-7 col-md-5 catalog__item-2">
+								<div class="catalog__shop"><a href="#" class="catalog__shop-link">Worldfamoustattooink</a></div>
+								<div class="catalog__name"><a href="#" class="catalog__name-link" data-name="Краска Eternal White">Краска Eternal White</a></div>
+								<div class="catalog__stars stars">
+									<div class="stars__items stars__items--transparent stars__items--0"><span></span><span></span><span></span><span></span><span></span></div>
+								</div>
+								<div class="catalog__params">
+									<div class="catalog__params-group">
+										<p>Фасовка:</p>
+										<div><!--
+											--><input type="radio" name="radio_fasovka_003" class="catalog__radio" data-name="1/2 Oz (15 мл)" id="radio_fasovka_003-1" value="1" checked><!--
+											--><label for="radio_fasovka_003-1" class="catalog__radio-label">1/2 Oz (15 мл)</label><!--
+											--><input type="radio" name="radio_fasovka_003" class="catalog__radio" data-name="1 Oz (30 мл)" id="radio_fasovka_003-2" value="2"><!--
+											--><label for="radio_fasovka_003-2" class="catalog__radio-label">1 Oz (30 мл)</label><!--
+											--><input type="radio" name="radio_fasovka_003" class="catalog__radio" data-name="2 Oz (60 мл)" id="radio_fasovka_003-3" value="3"><!--
+											--><label for="radio_fasovka_003-3" class="catalog__radio-label">2 Oz (60 мл)</label><!--
+											--><input type="radio" name="radio_fasovka_003" class="catalog__radio" data-name="4 Oz (120 мл)" id="radio_fasovka_003-4" value="4"><!--
+											--><label for="radio_fasovka_003-4" class="catalog__radio-label">4 Oz (120 мл)</label><!--
+											--><input type="radio" name="radio_fasovka_003" class="catalog__radio" data-name="8 Oz (240 мл)" id="radio_fasovka_003-5" value="5"><!--
+											--><label for="radio_fasovka_003-5" class="catalog__radio-label">8 Oz (240 мл)</label><!--
+										--></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-md-3 catalog__item-3">
+								<div class="row">
+									<div class="col-5 d-md-none">
+										<div class="catalog__desc">
+											<a href="#" class="catalog__desc-rating">50 к рейтингу</a>
+											<a href="#" class="catalog__desc-cert">Сертифицирован</a>
+										</div>
+									</div>
+									<div class="col-7 col-md-12">
+										<!-- ЦЕНЫ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+										<div class="catalog__cost" data-params="radio_fasovka_003:1,">11 100 ₽</div>
+										<div class="catalog__cost" data-params="radio_fasovka_003:2,">12 300 ₽</div>
+										<div class="catalog__cost" data-params="radio_fasovka_003:3,">13 500 ₽</div>
+										<div class="catalog__cost" data-params="radio_fasovka_003:4,">14 100 ₽</div>
+										<div class="catalog__cost" data-params="radio_fasovka_003:5,">15 300 ₽</div>
+										<!-- СКИДКИ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+										<div class="catalog__discont" data-params="radio_fasovka_003:2,"><span>−17%</span> 15 000 ₽</div>
+										<div class="d-none d-md-block catalog__desc">
+											<a href="#" class="catalog__desc-rating">50 к рейтингу</a>
+											<a href="#" class="catalog__desc-cert">Сертифицирован</a>
+										</div>
+										<div class="catalog__button">
+											<!-- КНОПКИ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ - В ПАРАМЕТРАХ - НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА,НАЗВАНИЕ ИНПУТА:ЗНАЧЕНИЕ ИНПУТА, -->
+											<a href="#" class="btn btn--red btn--w100 catalog__button-link hide" data-params="radio_fasovka_003:1,">В корзину</a>
+											<a href="#" class="btn btn--gray btn--w100 catalog__button-link hide" data-params="radio_fasovka_003:2,">Уведомить</a>
+											<a href="#" class="btn btn--red btn--w100 catalog__button-link hide" data-params="radio_fasovka_003:3,">В корзину</a>
+											<a href="#" class="btn btn--gray btn--w100 catalog__button-link hide" data-params="radio_fasovka_003:4,">Уведомить</a>
+											<a href="#" class="btn btn--red btn--w100 catalog__button-link hide" data-params="radio_fasovka_003:5,">В корзину</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /item -->
+						<!-- item -->
+						<div class="row catalog__item catalog__item--not-available">
+							<div class="col-5 col-md-4 catalog__item-1">
+								<!-- ИЗОБРАЖЕНИЯ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ -->
+								<img class="catalog__image hide" src="upload/catalog/004.jpg" alt="">
+							</div>
+							<div class="col-7 col-md-5 catalog__item-2">
+								<div class="catalog__shop"><a href="#" class="catalog__shop-link">World Famous </a></div>
+								<div class="catalog__name"><a href="#" class="catalog__name-link" data-name="Тату краски Linig and Shading Set 1 унция">Тату краски Linig and Shading Set 1 унция</a></div>
+								<div class="catalog__stars stars">
+									<div class="stars__items stars__items--transparent stars__items--4"><span></span><span></span><span></span><span></span><span></span></div>
+								</div>
+								<div class="catalog__params">
+									<div class="catalog__params-group">
+										<p>Нет в наличии</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-md-3 catalog__item-3">
+								<div class="row">
+									<div class="col-5 d-md-none">
+										<div class="catalog__desc">
+											<a href="#" class="catalog__desc-cert">Сертифицирован</a>
+										</div>
+									</div>
+									<div class="col-7 col-md-12">
+										<!-- ЦЕНЫ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ -->
+										<div class="catalog__cost">12 300 ₽</div>
+										<div class="d-none d-md-block catalog__desc">
+											<a href="#" class="catalog__desc-cert">Сертифицирован</a>
+										</div>
+										<div class="catalog__button">
+											<!-- КНОПКИ ДЛЯ ТОРГОВЫХ ПРЕДЛОЖЕНИЙ -->
+											<a href="#" class="btn btn--gray btn--w100 catalog__button-link hide">Уведомить</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /item -->
+					</div>
+					<div class="row align-items-center">
+						<div class="col-12 mt">
+							<a href="#" class="btn btn--w100 works-more">Показать ещё</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<!-- @import "_footer.html" -->
+
+<!-- @import "_modals.html" -->
+
+<!-- @import "_scripts.html" -->
+
+</body>
+</html>

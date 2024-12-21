@@ -1,0 +1,2161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- favicon dark -->
+	<link rel="apple-touch-icon" sizes="180x180" href="images/favicon_dark/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon_dark/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon_dark/favicon-16x16.png">
+	<link rel="manifest" href="images/favicon_dark/site.webmanifest">
+	<link rel="mask-icon" href="images/favicon_dark/safari-pinned-tab.svg" color="#c31700">
+	<link rel="shortcut icon" href="images/favicon_dark/favicon.ico">
+	<meta name="apple-mobile-web-app-title" content="RusTattoo">
+	<meta name="application-name" content="RusTattoo">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="images/favicon_dark/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- favicon light -->
+	<!--
+	<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+	<link rel="manifest" href="images/favicon/site.webmanifest">
+	<link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="images/favicon/favicon.ico">
+	<meta name="apple-mobile-web-app-title" content="RusTattoo">
+	<meta name="application-name" content="RusTattoo">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="images/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	-->
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+
+	<link rel="stylesheet" href="plugins/bootstrap-4.4.1/bootstrap-grid.css">
+	<link rel="stylesheet" href="plugins/bootstrap-4.4.1/bootstrap-grid-fix.css">
+	<link rel="stylesheet" href="plugins/fontawesome-free-5.11.2-web/css/all.min.css">
+	<link rel="stylesheet" href="plugins/slick-1.8.1/slick.css">
+	<link rel="stylesheet" href="plugins/fancybox-master/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="plugins/chosen_v1.8.7/chosen.min.css">
+	<link rel="stylesheet" href="plugins/dropzone/dropzone.css">
+	<link rel="stylesheet" href="plugins/jquery.growl/jquery.growl.css">
+	<link rel="stylesheet" href="template_styles.css">
+
+	<title>01 index</title>
+</head>
+<body>
+
+	<header class="header compensate-for-scrollbar">
+		<div class="container">
+			<div class="row align-items-center header__wrapper">
+				<div class="col-3 col-sm-2 header__burger">
+					<div class="burger"><span></span></div>
+				</div>
+				<div class="col-6 col-sm-8 col-lg-2 logo header__logo"><a href="/" class="logo__link"><img src="images/logo.svg" class="logo__image"></a></div>
+				<div class="col-2 d-none d-lg-block city header__city"><a href="javascript:;" class="city__link" data-fancybox data-type="ajax" data-src="_source/ajax-citys.html">Москва</a></div>
+				<div class="col-6 d-none d-lg-block nav header__nav">
+					<ul class="nav__list">
+						<li class="nav__item"><a href="#" class="nav__link nav__link--active">Мастера</a></li>
+						<li class="nav__item"><a href="#" class="nav__link">Салоны</a></li>
+						<li class="nav__item"><a href="#" class="nav__link">Работы</a></li>
+						<li class="nav__item"><a href="#" class="nav__link">Заказы</a></li>
+						<li class="nav__item"><a href="#" class="nav__link">Значения</a></li>
+						<li class="nav__item"><a href="#" class="nav__link">Магазин</a></li>
+					</ul>
+				</div>
+				<div class="col-3 col-sm-2 col-lg-2 header__profile">
+					<a href="#" class="header__shop"><span class="header__shop-notify">1</span></a>
+					<!-- если не авторизован -->
+					<a href="#" class="header__profile-link" data-fancybox data-src="#login_form" data-options='{"baseClass": "fancybox-auto", "touch": false}'>Вход</a>
+					<!-- если авторизован -->
+					<div class="header__profile-user user">
+						<div class="user__nav">
+							<a href="javascript:;" data-fancybox data-src="#messages" data-options='{"baseClass": "fancybox-right", "touch": false}' class="user__nav-link user__nav-link--messages">Сообщения <span class="user__notify">2</span></a>
+							<a href="#" class="user__nav-link user__nav-link--profile">Профиль</a>
+							<a href="#" class="user__nav-link user__nav-link--logout">Выйти</a>
+						</div>
+						<div class="user__ava ibg">
+							<img src="upload/users/002.jpg" alt="">
+							<span class="user__notify">2</span>
+							<div class="user__name">Максим Ю.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="d-lg-none nav-mobile">
+			<div class="container">
+				<div class="row no-gutters">
+					<div class="col-10 col-xs-8 col-md-6">
+						<div class="nav-mobile__inner">
+							<ul class="nav__list">
+								<li class="nav__item"><a href="javascript:;" class="nav__link nav__link--city" data-fancybox data-type="ajax" data-src="_source/ajax-citys.html">Москва</a></li>
+								<li class="nav__item"><a href="#" class="nav__link nav__link--active">Мастера</a></li>
+								<li class="nav__item"><a href="#" class="nav__link">Салоны</a></li>
+								<li class="nav__item"><a href="#" class="nav__link">Работы</a></li>
+								<li class="nav__item"><a href="#" class="nav__link">Заказы</a></li>
+								<li class="nav__item"><a href="#" class="nav__link">Значения</a></li>
+								<li class="nav__item"><a href="#" class="nav__link nav__link--basket">Магазин</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section class="upload-simple">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="upload-simple__container">
+						<div class="row align-items-center">
+							<div class="col-12 col-md-8 col-lg-9">
+								<div class="upload-simple__data">
+									<div class="upload-simple__left">
+										<img src="images/image-upload.svg" alt="">
+									</div>
+									<div class="upload-simple__right">
+										<div class="upload-simple__title">Просто загрузите эскиз</div>
+										<div class="upload-simple__desc">Лучшие тату-мастера сделают вам татуировку по вашим пожеланиям</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-md-4 col-lg-3">
+								<a href="#" class="btn btn--red btn--w100">Разместить заказ</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="orders">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-9">
+					<h2>Новые заказы</h2>
+				</div>
+				<div class="col-12 col-md-3 d-none d-md-block text-align-right">
+					<a href="#" class="link-all">Смотреть все</a>
+				</div>
+			</div>
+			<div class="row align-items-stretch">
+				<div class="col-12 col-md-6 col-lg-4 mt">
+					<div class="card-vert">
+						<div class="card-vert__top">
+							<a href="#" class="card-vert__image ibg">
+								<img src="images/pixel.gif" data-src="upload/orders/001.jpg" alt="" class="lazy">
+								<div class="img-sizer"><img src="images/1.75.gif" alt=""></div>
+							</a>
+							<div class="card-vert__tags ml mt"><!--
+								--><span>3000 &#8381;</span><!--
+							--></div>
+						</div>
+						<div class="card-vert__center">
+							<a href="#" class="card-vert__data">
+								<div class="card-vert__title">Хочу сделать тату! Хочу сделать чёрного кота на ноге! сколько будет стоить! и как больно?</div>
+							</a>
+						</div>
+						<div class="card-vert__bottom">
+							<a href="#" class="card-vert__author author author--32">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="images/pixel.gif" data-src="upload/users/001.jpg" alt="" class="lazy"></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Кристина Комарова</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 mt">
+					<div class="card-vert card-vert--nophoto">
+						<div class="card-vert__top">
+							<div class="card-vert__tags ml mt"><!--
+								--><span>2500 &#8381;</span><!--
+							--></div>
+						</div>
+						<div class="card-vert__center">
+							<a href="#" class="card-vert__data">
+								<div class="card-vert__title">Помогите выбрать татуировку Хочу написать на латыни известную цитату со смыслом, предложите парочку и более пожалуйста</div>
+							</a>
+						</div>
+						<div class="card-vert__bottom">
+							<a href="#" class="card-vert__author author author--32">
+								<div class="author__image">
+									<div class="author__nophoto">М</div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Максим Крючков</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 mt">
+					<div class="card-vert">
+						<div class="card-vert__top">
+							<a href="#" class="card-vert__image ibg">
+								<img src="images/pixel.gif" data-src="upload/orders/002.jpg" alt="" class="lazy">
+								<div class="img-sizer"><img src="images/1.75.gif" alt=""></div>
+							</a>
+							<div class="card-vert__tags ml mt"><!--
+								--><span>3800 &#8381;</span><!--
+							--></div>
+						</div>
+						<div class="card-vert__center">
+							<a href="#" class="card-vert__data">
+								<div class="card-vert__title">Хочу набить на голень наколку бомба с фитилём, Есть ли какое обозначение этой тату...</div>
+							</a>
+						</div>
+						<div class="card-vert__bottom">
+							<a href="#" class="card-vert__author author author--32">
+								<div class="author__image">
+									<div class="author__nophoto">И</div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Иван Краюшкин</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 mt">
+					<div class="card-vert">
+						<div class="card-vert__top">
+							<a href="#" class="card-vert__image ibg">
+								<img src="images/pixel.gif" data-src="upload/orders/003.jpg" alt="" class="lazy">
+								<div class="img-sizer"><img src="images/1.75.gif" alt=""></div>
+							</a>
+							<div class="card-vert__tags ml mt"><!--
+								--><span>1000 &#8381;</span><!--
+							--></div>
+						</div>
+						<div class="card-vert__center">
+							<a href="#" class="card-vert__data">
+								<div class="card-vert__title">Хочу сделать тату временное</div>
+							</a>
+						</div>
+						<div class="card-vert__bottom">
+							<a href="#" class="card-vert__author author author--32">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="images/pixel.gif" data-src="upload/users/002.jpg" alt="" class="lazy"></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Эффи Стоун</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 mt">
+					<div class="card-vert">
+						<div class="card-vert__top">
+							<a href="#" class="card-vert__image ibg">
+								<img src="images/pixel.gif" data-src="upload/orders/004.jpg" alt="" class="lazy">
+								<div class="img-sizer"><img src="images/1.75.gif" alt=""></div>
+							</a>
+							<div class="card-vert__tags ml mt"><!--
+								--><span>4000 &#8381;</span><!--
+							--></div>
+						</div>
+						<div class="card-vert__center">
+							<a href="#" class="card-vert__data">
+								<div class="card-vert__title">Хочу сделать татуировку</div>
+								<div class="card-vert__desc">Давно хочу татуировку, вот вроде решилась )) осталось найти мас...</div>
+							</a>
+						</div>
+						<div class="card-vert__bottom">
+							<a href="#" class="card-vert__author author author--32">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="images/pixel.gif" data-src="upload/users/003.jpg" alt="" class="lazy"></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Анастасия</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 mt">
+					<div class="card-vert card-vert--nophoto">
+						<div class="card-vert__top">
+							<div class="card-vert__tags ml mt"><!--
+								--><span>По договоренности</span><!--
+							--></div>
+						</div>
+						<div class="card-vert__center">
+							<a href="#" class="card-vert__data">
+								<div class="card-vert__title">Хочу сделать тату! Хочу сделать чёрного кота на ноге! сколько будет стоить! и как больно?</div>
+							</a>
+						</div>
+						<div class="card-vert__bottom">
+							<a href="#" class="card-vert__author author author--32">
+								<div class="author__image">
+									<div class="author__nophoto">В</div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Витя Гараж</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row align-items-center">
+				<div class="col-12 mt">
+					<a href="#" class="btn btn--w100 btn--arrow">Смотреть все</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="masters-top">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-9">
+					<h2>Популярные мастера</h2>
+				</div>
+				<div class="col-12 col-md-3 d-none d-md-block text-align-right">
+					<a href="#" class="link-all">Смотреть все</a>
+				</div>
+			</div>
+			<div class="card-lines mt">
+				<div class="card-line">
+					<div class="row align-items-center mt">
+						<div class="col-12 col-lg-4 mb">
+							<a href="#" class="card-line__author author">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="images/pixel.gif" data-src="upload/users/002.jpg" alt="" class="lazy"></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Виталий Тарасов</div>
+									<div class="author__desc">Тату-мастер, мастер перманентного макияжа</div>
+									<div class="author__rating rating">
+										<div class="rating__points">4,6</div>
+										<div class="rating__votes">(21)</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-12 col-lg-6 mb">
+							<div class="card-line__photos">
+								<div class="card-line__photo ibg" data-fancybox="masters_top_1" data-options='{"url":"/ajax-work-1-1.html"}' data-type="ajax" data-src="_source/ajax-work-1-1.html">
+									<img src="images/pixel.gif" data-src="upload/works/001.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="masters_top_1" data-options='{"url":"/ajax-work-1-2.html"}' data-type="ajax" data-src="_source/ajax-work-1-2.html">
+									<img src="images/pixel.gif" data-src="upload/works/002.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="masters_top_1" data-options='{"url":"/ajax-work-1-3.html"}' data-type="ajax" data-src="_source/ajax-work-1-3.html">
+									<img src="images/pixel.gif" data-src="upload/works/003.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="masters_top_1" data-options='{"url":"/ajax-work-1-1.html"}' data-type="ajax" data-src="_source/ajax-work-1-1.html">
+									<img src="images/pixel.gif" data-src="upload/works/004.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="masters_top_1" data-options='{"url":"/ajax-work-1-2.html"}' data-type="ajax" data-src="_source/ajax-work-1-2.html">
+									<img src="images/pixel.gif" data-src="upload/works/005.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="masters_top_1" data-options='{"url":"/ajax-work-1-3.html"}' data-type="ajax" data-src="_source/ajax-work-1-3.html">
+									<img src="images/pixel.gif" data-src="upload/works/006.jpg" alt="" class="lazy">
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-lg-2 mb text-align-right">
+							<a href="#" class="link-all link-all--dark">188 работ</a>
+						</div>
+					</div>
+				</div>
+				<div class="card-line">
+					<div class="row align-items-center mt">
+						<div class="col-12 col-lg-4 mb">
+							<a href="#" class="card-line__author author">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="images/pixel.gif" data-src="upload/users/003.jpg" alt="" class="lazy"></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Екатерина Леднева</div>
+									<div class="author__desc">Тату-мастер</div>
+									<div class="author__rating rating">
+										<div class="rating__points">4,6</div>
+										<div class="rating__votes">(21)</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-12 col-lg-6 mb">
+							<div class="card-line__photos">
+								<div class="card-line__photo ibg" data-fancybox="masters_top_2" data-options='{"url":"/ajax-work-2-1.html"}' data-type="ajax" data-src="_source/ajax-work-2-1.html">
+									<img src="images/pixel.gif" data-src="upload/works/007.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="masters_top_2" data-options='{"url":"/ajax-work-2-2.html"}' data-type="ajax" data-src="_source/ajax-work-2-2.html">
+									<img src="images/pixel.gif" data-src="upload/works/008.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="masters_top_2" data-options='{"url":"/ajax-work-2-3.html"}' data-type="ajax" data-src="_source/ajax-work-2-3.html">
+									<img src="images/pixel.gif" data-src="upload/works/009.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="masters_top_2" data-options='{"url":"/ajax-work-2-1.html"}' data-type="ajax" data-src="_source/ajax-work-2-1.html">
+									<img src="images/pixel.gif" data-src="upload/works/010.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="masters_top_2" data-options='{"url":"/ajax-work-2-2.html"}' data-type="ajax" data-src="_source/ajax-work-2-2.html">
+									<img src="images/pixel.gif" data-src="upload/works/011.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="masters_top_2" data-options='{"url":"/ajax-work-2-3.html"}' data-type="ajax" data-src="_source/ajax-work-2-3.html">
+									<img src="images/pixel.gif" data-src="upload/works/012.jpg" alt="" class="lazy">
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-lg-2 mb text-align-right">
+							<a href="#" class="link-all link-all--dark">173 работы</a>
+						</div>
+					</div>
+				</div>
+				<div class="card-line">
+					<div class="row align-items-center mt">
+						<div class="col-12 col-lg-4 mb">
+							<a href="#" class="card-line__author author">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="images/pixel.gif" data-src="upload/users/001.jpg" alt="" class="lazy"></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Вероника Кравчинская</div>
+									<div class="author__desc">Тату-мастер, пирсер</div>
+									<div class="author__rating rating">
+										<div class="rating__points">4,5</div>
+										<div class="rating__votes">(18)</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-12 col-lg-6 mb">
+							<div class="card-line__photos">
+								<div class="card-line__photo ibg" data-fancybox="masters_top_3" data-options='{"url":"/ajax-work-3-1.html"}' data-type="ajax" data-src="_source/ajax-work-3-1.html">
+									<img src="images/pixel.gif" data-src="upload/works/013.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="masters_top_3" data-options='{"url":"/ajax-work-3-2.html"}' data-type="ajax" data-src="_source/ajax-work-3-2.html">
+									<img src="images/pixel.gif" data-src="upload/works/014.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="masters_top_3" data-options='{"url":"/ajax-work-3-3.html"}' data-type="ajax" data-src="_source/ajax-work-3-3.html">
+									<img src="images/pixel.gif" data-src="upload/works/015.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="masters_top_3" data-options='{"url":"/ajax-work-3-1.html"}' data-type="ajax" data-src="_source/ajax-work-3-1.html">
+									<img src="images/pixel.gif" data-src="upload/works/001.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="masters_top_3" data-options='{"url":"/ajax-work-3-2.html"}' data-type="ajax" data-src="_source/ajax-work-3-2.html">
+									<img src="images/pixel.gif" data-src="upload/works/002.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="masters_top_3" data-options='{"url":"/ajax-work-3-3.html"}' data-type="ajax" data-src="_source/ajax-work-3-3.html">
+									<img src="images/pixel.gif" data-src="upload/works/003.jpg" alt="" class="lazy">
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-lg-2 mb text-align-right">
+							<a href="#" class="link-all link-all--dark">151 работа</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row align-items-center">
+				<div class="col-12 mt">
+					<a href="#" class="btn btn--w100 btn--arrow">Смотреть все</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="feedback-master section-slider">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-9">
+					<h2>Отзывы о салонах</h2>
+				</div>
+				<!--
+				<div class="col-12 col-md-3 d-none d-md-block text-align-right">
+					<a href="#" class="link-all">Смотреть все</a>
+				</div>
+				-->
+			</div>
+			<div class="feedback-slider slider mt">
+				<div class="slider__item">
+					<div class="slider__card card-horiz">
+						<div class="cart-horiz__left">
+							<a href="#" class="card-horiz__master author author--86">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/001.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Ксения Прохорова</div>
+									<div class="author__desc">Тату-мастер</div>
+									<div class="author__rating rating">
+										<div class="rating__points">1,0</div>
+										<div class="rating__votes">(1)</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="cart-horiz__right">
+							<div class="cart-horiz__stars starts">
+								<div class="stars__items stars__items--1"><span></span><span></span><span></span><span></span><span></span></div>
+							</div>
+							<div class="cart-horiz__text">Мастер — жопорукая дура. Набила кривую работу с ОШИБКОЙ! Кто желает обзавестись портаком — велкам.</div>
+							<a href="#" class="card-horiz__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/002.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Ксенечка Darling</div>
+									<div class="author__date">13 июня 2018</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="slider__item">
+					<div class="slider__card card-horiz">
+						<div class="cart-horiz__left">
+							<a href="#" class="card-horiz__master author author--86">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/003.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Юрий Сурков</div>
+									<div class="author__desc">Тату-мастер</div>
+									<div class="author__rating rating">
+										<div class="rating__points">4,7</div>
+										<div class="rating__votes">(3)</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="cart-horiz__right">
+							<div class="cart-horiz__stars starts">
+								<div class="stars__items stars__items--5"><span></span><span></span><span></span><span></span><span></span></div>
+							</div>
+							<div class="cart-horiz__text">Хочу выразить благодарность и сказать спасибо мастеру за его золотые руки, которые растут от куда надо!!!!!.у Юры сделала уже не одну татуировку, два…</div>
+							<a href="#" class="card-horiz__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/004.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Алла Матвеева</div>
+									<div class="author__date">17 февраля 2018</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="slider__item">
+					<div class="slider__card card-horiz">
+						<div class="cart-horiz__left">
+							<a href="#" class="card-horiz__master author author--86">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/005.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Вероника Кравчинская</div>
+									<div class="author__desc">Тату-мастер, пирсер</div>
+									<div class="author__rating rating">
+										<div class="rating__points">4,5</div>
+										<div class="rating__votes">(18)</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="cart-horiz__right">
+							<div class="cart-horiz__stars starts">
+								<div class="stars__items stars__items--4"><span></span><span></span><span></span><span></span><span></span></div>
+							</div>
+							<div class="cart-horiz__text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Своих лучше, точках маленький моей!</div>
+							<a href="#" class="card-horiz__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/001.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Кристина Комарова</div>
+									<div class="author__date">10 января 2018</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="salons-top">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-9">
+					<h2>Популярные салоны</h2>
+				</div>
+				<div class="col-12 col-md-3 d-none d-md-block text-align-right">
+					<a href="#" class="link-all">Смотреть все</a>
+				</div>
+			</div>
+			<div class="card-lines mt">
+				<div class="card-line">
+					<div class="row align-items-center mt">
+						<div class="col-12 col-lg-4 mb">
+							<a href="#" class="card-line__author author">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="images/pixel.gif" data-src="upload/salon/001.jpg" alt="" class="lazy"></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Get Tattoo Studio</div>
+									<div class="author__desc">Татуировки</div>
+									<div class="author__rating rating">
+										<div class="rating__points">4,2</div>
+										<div class="rating__votes">(25)</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-12 col-lg-6 mb">
+							<div class="card-line__photos">
+								<div class="card-line__photo ibg" data-fancybox="salons_top_1" data-options='{"url":"/ajax-work-1-1.html"}' data-type="ajax" data-src="_source/ajax-work-1-1.html">
+									<img src="images/pixel.gif" data-src="upload/works/016.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="salons_top_1" data-options='{"url":"/ajax-work-1-2.html"}' data-type="ajax" data-src="_source/ajax-work-1-2.html">
+									<img src="images/pixel.gif" data-src="upload/works/017.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="salons_top_1" data-options='{"url":"/ajax-work-1-3.html"}' data-type="ajax" data-src="_source/ajax-work-1-3.html">
+									<img src="images/pixel.gif" data-src="upload/works/018.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="salons_top_1" data-options='{"url":"/ajax-work-1-1.html"}' data-type="ajax" data-src="_source/ajax-work-1-1.html">
+									<img src="images/pixel.gif" data-src="upload/works/019.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="salons_top_1" data-options='{"url":"/ajax-work-1-2.html"}' data-type="ajax" data-src="_source/ajax-work-1-2.html">
+									<img src="images/pixel.gif" data-src="upload/works/020.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="salons_top_1" data-options='{"url":"/ajax-work-1-3.html"}' data-type="ajax" data-src="_source/ajax-work-1-3.html">
+									<img src="images/pixel.gif" data-src="upload/works/021.jpg" alt="" class="lazy">
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-lg-2 mb text-align-right">
+							<a href="#" class="link-all link-all--dark">74 работы</a>
+						</div>
+					</div>
+				</div>
+				<div class="card-line">
+					<div class="row align-items-center mt">
+						<div class="col-12 col-lg-4 mb">
+							<a href="#" class="card-line__author author">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="images/pixel.gif" data-src="upload/salon/002.jpg" alt="" class="lazy"></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Black Room Tattoo</div>
+									<div class="author__desc">Татуировки</div>
+									<div class="author__rating rating">
+										<div class="rating__points">4,3</div>
+										<div class="rating__votes">(11)</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-12 col-lg-6 mb">
+							<div class="card-line__photos">
+								<div class="card-line__photo ibg" data-fancybox="salons_top_2" data-options='{"url":"/ajax-work-1-1.html"}' data-type="ajax" data-src="_source/ajax-work-1-1.html">
+									<img src="images/pixel.gif" data-src="upload/works/022.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="salons_top_2" data-options='{"url":"/ajax-work-1-2.html"}' data-type="ajax" data-src="_source/ajax-work-1-2.html">
+									<img src="images/pixel.gif" data-src="upload/works/023.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="salons_top_2" data-options='{"url":"/ajax-work-1-3.html"}' data-type="ajax" data-src="_source/ajax-work-1-3.html">
+									<img src="images/pixel.gif" data-src="upload/works/024.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="salons_top_2" data-options='{"url":"/ajax-work-1-1.html"}' data-type="ajax" data-src="_source/ajax-work-1-1.html">
+									<img src="images/pixel.gif" data-src="upload/works/025.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="salons_top_2" data-options='{"url":"/ajax-work-1-2.html"}' data-type="ajax" data-src="_source/ajax-work-1-2.html">
+									<img src="images/pixel.gif" data-src="upload/works/026.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="salons_top_2" data-options='{"url":"/ajax-work-1-3.html"}' data-type="ajax" data-src="_source/ajax-work-1-3.html">
+									<img src="images/pixel.gif" data-src="upload/works/027.jpg" alt="" class="lazy">
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-lg-2 mb text-align-right">
+							<a href="#" class="link-all link-all--dark">60 работ</a>
+						</div>
+					</div>
+				</div>
+				<div class="card-line">
+					<div class="row align-items-center mt">
+						<div class="col-12 col-lg-4 mb">
+							<a href="#" class="card-line__author author">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="images/pixel.gif" data-src="upload/salon/003.jpg" alt="" class="lazy"></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Renaissance — студия художественной татуи...</div>
+									<div class="author__desc">Татуировки, Удаление тату, Татуаж</div>
+									<div class="author__rating rating">
+										<div class="rating__points">4,5</div>
+										<div class="rating__votes">(29)</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-12 col-lg-6 mb">
+							<div class="card-line__photos">
+								<div class="card-line__photo ibg" data-fancybox="salons_top_3" data-options='{"url":"/ajax-work-1-1.html"}' data-type="ajax" data-src="_source/ajax-work-1-1.html">
+									<img src="images/pixel.gif" data-src="upload/works/028.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="salons_top_3" data-options='{"url":"/ajax-work-1-2.html"}' data-type="ajax" data-src="_source/ajax-work-1-2.html">
+									<img src="images/pixel.gif" data-src="upload/works/029.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="salons_top_3" data-options='{"url":"/ajax-work-1-3.html"}' data-type="ajax" data-src="_source/ajax-work-1-3.html">
+									<img src="images/pixel.gif" data-src="upload/works/030.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="salons_top_3" data-options='{"url":"/ajax-work-1-1.html"}' data-type="ajax" data-src="_source/ajax-work-1-1.html">
+									<img src="images/pixel.gif" data-src="upload/works/016.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="salons_top_3" data-options='{"url":"/ajax-work-1-2.html"}' data-type="ajax" data-src="_source/ajax-work-1-2.html">
+									<img src="images/pixel.gif" data-src="upload/works/017.jpg" alt="" class="lazy">
+								</div>
+								<div class="card-line__photo ibg" data-fancybox="salons_top_3" data-options='{"url":"/ajax-work-1-3.html"}' data-type="ajax" data-src="_source/ajax-work-1-3.html">
+									<img src="images/pixel.gif" data-src="upload/works/018.jpg" alt="" class="lazy">
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-lg-2 mb text-align-right">
+							<a href="#" class="link-all link-all--dark">92 работы</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row align-items-center">
+				<div class="col-12 mt">
+					<a href="#" class="btn btn--w100 btn--arrow">Смотреть все</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="feedback-salons section-slider">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-9">
+					<h2>Отзывы о салонах</h2>
+				</div>
+				<!--
+				<div class="col-12 col-md-3 d-none d-md-block text-align-right">
+					<a href="#" class="link-all">Смотреть все</a>
+				</div>
+				-->
+			</div>
+			<div class="feedback-slider slider mt">
+				<div class="slider__item">
+					<div class="slider__card card-horiz">
+						<div class="cart-horiz__left">
+							<a href="#" class="card-horiz__master author author--86">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/salon/004.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Хорошие Ребята</div>
+									<div class="author__desc">Татуировки</div>
+									<div class="author__rating rating">
+										<div class="rating__points">5,0</div>
+										<div class="rating__votes">(8)</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="cart-horiz__right">
+							<div class="cart-horiz__stars starts">
+								<div class="stars__items stars__items--5"><span></span><span></span><span></span><span></span><span></span></div>
+							</div>
+							<div class="cart-horiz__text">Делала тату на ребрах (рисунок + текст). Эскиз сделали по моей просьбе, все учли. Все сделано аккуратно, заживало хорошо, хоть место и противное, ничего не поплыло. Делала у мастера Насти.</div>
+							<a href="#" class="card-horiz__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/005.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Наталья Псыщаниц</div>
+									<div class="author__date">13 июня 2018</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="slider__item">
+					<div class="slider__card card-horiz">
+						<div class="cart-horiz__left">
+							<a href="#" class="card-horiz__master author author--86">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/salon/005.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Мир тату</div>
+									<div class="author__desc">Пирсинг, Татуаж, Татуировки, Шрамиро...</div>
+									<div class="author__rating rating">
+										<div class="rating__points">3,1</div>
+										<div class="rating__votes">(5)</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="cart-horiz__right">
+							<div class="cart-horiz__stars starts">
+								<div class="stars__items stars__items--1"><span></span><span></span><span></span><span></span><span></span></div>
+							</div>
+							<div class="cart-horiz__text">Делала пирсинг сосков. Мастеру было как будто все равно что она делает. Прокололи, рекомендации дали, я ушла. Через некоторое время проколы начали гноиться. Ранки не заживали. Я звонила в студи…</div>
+							<a href="#" class="card-horiz__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/002.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Елена Серикова</div>
+									<div class="author__date">17 февраля 2018</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="slider__item">
+					<div class="slider__card card-horiz">
+						<div class="cart-horiz__left">
+							<a href="#" class="card-horiz__master author author--86">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/salon/002.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Black Room Tattoo</div>
+									<div class="author__desc">Татуировки</div>
+									<div class="author__rating rating">
+										<div class="rating__points">4,3</div>
+										<div class="rating__votes">(11)</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="cart-horiz__right">
+							<div class="cart-horiz__stars starts">
+								<div class="stars__items stars__items--4"><span></span><span></span><span></span><span></span><span></span></div>
+							</div>
+							<div class="cart-horiz__text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Своих лучше, точках маленький моей!</div>
+							<a href="#" class="card-horiz__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/001.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Кристина Комарова</div>
+									<div class="author__date">10 января 2018</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="comments section-slider">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-9">
+					<h2>Новые комментарии</h2>
+				</div>
+				<!--
+				<div class="col-12 col-md-3 d-none d-md-block text-align-right">
+					<a href="#" class="link-all">Смотреть все</a>
+				</div>
+				-->
+			</div>
+			<div class="comments-slider slider mt">
+				<div class="slider__item">
+					<div class="slider__card card-vert">
+						<div class="card-vert__top">
+							<a href="#" class="card-vert__image ibg">
+								<img src="upload/comments/001.jpg" alt="">
+								<div class="img-sizer"><img src="images/1.75.gif" alt=""></div>
+							</a>
+						</div>
+						<div class="card-vert__center">
+							<a href="#" class="card-vert__data">
+								<div class="card-vert__text">Кто бы что не говорил, а татуировки — это красиво! Особенно если это красивые картины, а не надписюльки «с глубоким смыслом». Расскажу мою историю о горе-мастере и пок...</div>
+							</a>
+						</div>
+						<div class="card-vert__bottom">
+							<a href="#" class="card-vert__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/006.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Хелен Винтер</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="slider__item">
+					<div class="slider__card card-vert">
+						<div class="card-vert__top">
+							<a href="#" class="card-vert__image ibg">
+								<img src="upload/comments/002.jpg" alt="">
+								<div class="img-sizer"><img src="images/1.75.gif" alt=""></div>
+							</a>
+						</div>
+						<div class="card-vert__center">
+							<a href="#" class="card-vert__data">
+								<div class="card-vert__text">Ох...сколько места на ноге будет про@ано, когда блекухой забьешь 🙈</div>
+							</a>
+						</div>
+						<div class="card-vert__bottom">
+							<a href="#" class="card-vert__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/007.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Максим Крючков</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="slider__item">
+					<div class="slider__card card-vert">
+						<div class="card-vert__top">
+							<a href="#" class="card-vert__image ibg">
+								<img src="upload/comments/003.jpg" alt="">
+								<div class="img-sizer"><img src="images/1.75.gif" alt=""></div>
+							</a>
+						</div>
+						<div class="card-vert__center">
+							<a href="#" class="card-vert__data">
+								<div class="card-vert__text">Очень весело читать комментарии наших закомплексованных, продвигающих ксенофобию сограждан: презрение и неприятие профессиональных качеств из-за са...</div>
+							</a>
+						</div>
+						<div class="card-vert__bottom">
+							<a href="#" class="card-vert__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/008.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Любовь Родникова</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="slider__item">
+					<div class="slider__card card-vert">
+						<div class="card-vert__top">
+							<a href="#" class="card-vert__image ibg">
+								<img src="upload/comments/004.jpg" alt="">
+								<div class="img-sizer"><img src="images/1.75.gif" alt=""></div>
+							</a>
+						</div>
+						<div class="card-vert__center">
+							<a href="#" class="card-vert__data">
+								<div class="card-vert__text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Предупреждал скатился там над жизни.</div>
+							</a>
+						</div>
+						<div class="card-vert__bottom">
+							<a href="#" class="card-vert__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/009.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Елена Серикова</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="works">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-9">
+					<h2>Новые работы</h2>
+				</div>
+				<div class="col-12 col-md-3 d-none d-md-block text-align-right">
+					<a href="#" class="link-all">Смотреть все</a>
+				</div>
+			</div>
+			<div class="row works__grid mt">
+				<div class="works__item mb" data-id="work-001" data-order="1"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/001.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-1-1.html"}' data-type="ajax" data-src="_source/ajax-work-1-1.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__author">
+							<a href="#" class="card-vert__author author author--32 author--light">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/001.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Кристина Комарова</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-002" data-order="2"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/002.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-2-1.html"}' data-type="ajax" data-src="_source/ajax-work-2-1.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__author">
+							<a href="#" class="card-vert__author author author--32 author--light">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/001.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Кристина Комарова</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item works__item--eye mb" data-id="work-003" data-order="3"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/003.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-3-1.html"}' data-type="ajax" data-src="_source/ajax-work-3-1.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__date">Сентябрь 2019</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-004" data-order="4"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/004.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-1-2.html"}' data-type="ajax" data-src="_source/ajax-work-1-2.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__date">Сентябрь 2019</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-005" data-order="5"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/005.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-1-3.html"}' data-type="ajax" data-src="_source/ajax-work-1-3.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__author">
+							<a href="#" class="card-vert__author author author--32 author--light">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/001.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Кристина Комарова</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-006" data-order="6"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/006.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-3-1.html"}' data-type="ajax" data-src="_source/ajax-work-3-1.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__date">Сентябрь 2019</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-007" data-order="7"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/007.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-2-2.html"}' data-type="ajax" data-src="_source/ajax-work-2-2.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__author">
+							<a href="#" class="card-vert__author author author--32 author--light">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/001.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Кристина Комарова</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-008" data-order="8"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/008.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-2-1.html"}' data-type="ajax" data-src="_source/ajax-work-2-1.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__date">Сентябрь 2019</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item works__item--liked mb" data-id="work-009" data-order="9"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/009.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-1-3.html"}' data-type="ajax" data-src="_source/ajax-work-1-3.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__author">
+							<a href="#" class="card-vert__author author author--32 author--light">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/001.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Кристина Комарова</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-010" data-order="10"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/010.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-3-2.html"}' data-type="ajax" data-src="_source/ajax-work-3-2.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__date">Сентябрь 2019</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-011" data-order="11"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/011.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-3-3.html"}' data-type="ajax" data-src="_source/ajax-work-3-3.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__author">
+							<a href="#" class="card-vert__author author author--32 author--light">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/001.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Кристина Комарова</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-012" data-order="12"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/012.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-2-1.html"}' data-type="ajax" data-src="_source/ajax-work-2-1.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__date">Сентябрь 2019</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-013" data-order="13"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/013.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-1-2.html"}' data-type="ajax" data-src="_source/ajax-work-1-2.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__author">
+							<a href="#" class="card-vert__author author author--32 author--light">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/001.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Кристина Комарова</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item works__item--eye mb" data-id="work-014" data-order="14"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/014.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-3-2.html"}' data-type="ajax" data-src="_source/ajax-work-3-2.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__date">Сентябрь 2019</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-015" data-order="15"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/015.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-3-1.html"}' data-type="ajax" data-src="_source/ajax-work-3-1.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__author">
+							<a href="#" class="card-vert__author author author--32 author--light">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/001.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Кристина Комарова</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-016" data-order="16"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/016.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-1-3.html"}' data-type="ajax" data-src="_source/ajax-work-1-3.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__date">Сентябрь 2019</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-017" data-order="17"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/017.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-2-2.html"}' data-type="ajax" data-src="_source/ajax-work-2-2.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__author">
+							<a href="#" class="card-vert__author author author--32 author--light">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/001.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Кристина Комарова</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-018" data-order="18"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/018.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-2-3.html"}' data-type="ajax" data-src="_source/ajax-work-2-3.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__date">Сентябрь 2019</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-019" data-order="19"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/019.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-1-2.html"}' data-type="ajax" data-src="_source/ajax-work-1-2.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__author">
+							<a href="#" class="card-vert__author author author--32 author--light">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/001.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Кристина Комарова</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-020" data-order="20"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/020.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-1-3.html"}' data-type="ajax" data-src="_source/ajax-work-1-3.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__date">Сентябрь 2019</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-021" data-order="21"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/021.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-3-1.html"}' data-type="ajax" data-src="_source/ajax-work-3-1.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__author">
+							<a href="#" class="card-vert__author author author--32 author--light">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/001.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Кристина Комарова</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-022" data-order="22"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/022.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-2-1.html"}' data-type="ajax" data-src="_source/ajax-work-2-1.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__date">Сентябрь 2019</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item works__item--liked mb" data-id="work-023" data-order="23"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/023.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-3-2.html"}' data-type="ajax" data-src="_source/ajax-work-3-2.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__author">
+							<a href="#" class="card-vert__author author author--32 author--light">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/001.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Кристина Комарова</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-024" data-order="24"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/024.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-1-1.html"}' data-type="ajax" data-src="_source/ajax-work-1-1.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__date">Сентябрь 2019</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-025" data-order="25"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/025.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-1-3.html"}' data-type="ajax" data-src="_source/ajax-work-1-3.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__author">
+							<a href="#" class="card-vert__author author author--32 author--light">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/001.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Кристина Комарова</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-026" data-order="26"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/026.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-3-1.html"}' data-type="ajax" data-src="_source/ajax-work-3-1.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__date">Сентябрь 2019</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-027" data-order="27"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/027.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-2-1.html"}' data-type="ajax" data-src="_source/ajax-work-2-1.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__author">
+							<a href="#" class="card-vert__author author author--32 author--light">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/001.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Кристина Комарова</div>
+									<div class="author__date">25 января</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="works__item mb" data-id="work-028" data-order="28"> <!-- 000 - ID работы -->
+					<img src="images/pixel.gif" data-src="upload/masonry/028.jpg" alt="" class="lazy">
+					<div class="works__data">
+						<a href="javascript:;" class="works__popup" data-fancybox="works" data-options='{"url":"/ajax-work-1-2.html"}' data-type="ajax" data-src="_source/ajax-work-1-2.html"></a>
+						<a href="#" class="works__name">Бабочка</a>
+						<div class="works__desc"><a href="#">Торс</a>, <a href="#">стиль Чекано</a></div>
+						<div class="works__date">Сентябрь 2019</div>
+					</div>
+					<div class="works__buttons">
+						<div class="works__button works__heart">
+							<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7811 7.69919L8.99987 14.5759L2.09346 7.57479C1.41383 6.87441 1 5.92933 1 4.88889C1 2.75279 2.75673 1 4.95 1C6.29044 1 7.47145 1.65596 8.18577 2.65781L9 3.79978L9.81423 2.65781C10.5285 1.65596 11.7096 1 13.05 1C15.2433 1 17 2.75279 17 4.88889C17 5.98135 16.5436 6.96933 15.8019 7.67865L15.7913 7.68876L15.7811 7.69919Z"></path></svg>
+						</div>
+						<div class="works__button works__edit">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8497225,0.706970001 L0.813684852,12.7383526 L0.813684852,12.7383526 L0,18 L5.27561455,17.1985566 L17.2945791,5.14855795 C17.6842973,4.75783344 17.6838283,4.12526615 17.2935312,3.73511995 L14.2642096,0.706970001 C13.8734431,0.316901687 13.240489,0.316901687 12.8497225,0.706970001 Z"></path></svg>
+						</div>
+						<div class="works__button works__delete">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.98105113,0 L15.9989393,0 L18,0 L18,2.99973079 L15.9989393,2.99973079 L15.9989393,14 C15.9989393,16.209139 14.2080783,18 11.9989393,18 L5.98105113,18 C3.77191213,18 1.98105113,16.209139 1.98105113,14 L1.98105113,2.99973079 L1.98105113,2.99973079 L0,2.99973079 L0,0 L1.98105113,0 Z"></path></svg>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row align-items-center">
+				<div class="col-12 mt">
+					<a href="#" class="btn btn--w100 btn--arrow">Смотреть все</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer mt">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-lg-6 footer__left">
+					<div class="row nav-footer">
+						<div class="col-6 col-sm-4"><a href="#" class="nav-footer__link">Мастера</a></div>
+						<div class="col-6 col-sm-4"><a href="#" class="nav-footer__link">Салоны</a></div>
+						<div class="col-6 col-sm-4"><a href="#" class="nav-footer__link">Работы</a></div>
+						<div class="col-6 col-sm-4"><a href="#" class="nav-footer__link">Заказы</a></div>
+						<div class="col-6 col-sm-4"><a href="#" class="nav-footer__link">Значения</a></div>
+						<div class="col-6 col-sm-4"><a href="#" class="nav-footer__link">Магазин</a></div>
+					</div>
+				</div>
+				<div class="col-12 col-lg-6 footer__right">
+					<div class="social"><!--
+						--><a href="#" target="_blank" class="social__item social__item--vk"><i class="fab fa-vk"></i></a><!--
+						--><a href="#" target="_blank" class="social__item social__item--facebook"><i class="fab fa-facebook-f"></i></a><!--
+						--><a href="#" target="_blank" class="social__item social__item--twitter"><i class="fab fa-twitter"></i></a><!--
+						--><a href="#" target="_blank" class="social__item social__item--instagram"><i class="fab fa-instagram"></i></a><!--
+						--><a href="#" target="_blank" class="social__item social__item--ok"><i class="fab fa-odnoklassniki"></i></a><!--
+						--><a href="#" target="_blank" class="social__item social__item--youtube"><i class="fab fa-youtube"></i></a><!--
+						--><a href="#" target="_blank" class="social__item social__item--telegram"><i class="fab fa-telegram-plane"></i></a><!--
+					--></div>
+					<div class="copy">© RusTattoo, 2020</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<div class="write-admin">
+		<a href="#" class="write-admin__link"><span>Нужна помощь?</span></a>
+	</div>
+	<div id="thank" class="popup">
+		<div class="popup__inner">
+			<p>Спасибо! Мы принияли вашу заявку,<br>менеджер вам перезвонит.</p>
+		</div>
+	</div>
+	<a href="#" data-fancybox data-src="#thank" class="hide" id="thank_link"></a>
+
+	<div id="filter_map" class="popup">
+		<div class="popup__inner">
+			Выбор на карте
+		</div>
+	</div>
+
+	<div id="filter_filters" class="popup popup--filter">
+		<div class="popup__inner">
+			<h3>Фильтры</h3>
+			<form action="/" name="" class="mt" id="form_filter">
+				<div class="filter__group">
+					<div class="filter__group-title pt pb">Стиль</div>
+					<div class="filter__group-data">
+						<div class="form__checkbox"><label><input type="checkbox" value="1" class="checkbox" data-name="3D">3D</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="2" class="checkbox" data-name="Абстракционизм">Абстракционизм</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="3" class="checkbox" data-name="Авторский">Авторский</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="4" class="checkbox" data-name="Акварель">Акварель</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="5" class="checkbox" data-name="Биомеханика">Биомеханика</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="6" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="7" class="checkbox" data-name="Вип Шейдинг">Вип Шейдинг</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="8" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+					</div>
+				</div>
+				<div class="filter__group">
+					<div class="filter__group-title pt pb">Место</div>
+					<div class="filter__group-data">
+						<div class="form__checkbox"><label><input type="checkbox" value="9" class="checkbox" data-name="3D">3D</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="10" class="checkbox" data-name="Абстракционизм">Абстракционизм</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="11" class="checkbox" data-name="Авторский">Авторский</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="12" class="checkbox" data-name="Акварель">Акварель</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="13" class="checkbox" data-name="Биомеханика">Биомеханика</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="14" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="15" class="checkbox" data-name="Вип Шейдинг">Вип Шейдинг</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="16" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+					</div>
+				</div>
+				<div class="filter__group">
+					<div class="filter__group-title pt pb">Тип</div>
+					<div class="filter__group-data">
+						<div class="form__checkbox"><label><input type="checkbox" value="17" class="checkbox" data-name="3D">3D</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="18" class="checkbox" data-name="Абстракционизм">Абстракционизм</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="19" class="checkbox" data-name="Авторский">Авторский</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="20" class="checkbox" data-name="Акварель">Акварель</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="21" class="checkbox" data-name="Биомеханика">Биомеханика</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="22" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="23" class="checkbox" data-name="Вип Шейдинг">Вип Шейдинг</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="24" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+					</div>
+				</div>
+				<div class="filter__group">
+					<div class="filter__group-title pt pb">Значение</div>
+					<div class="filter__group-data">
+						<div class="form__checkbox"><label><input type="checkbox" value="25" class="checkbox" data-name="3D">3D</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="26" class="checkbox" data-name="Абстракционизм">Абстракционизм</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="27" class="checkbox" data-name="Авторский">Авторский</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="28" class="checkbox" data-name="Акварель">Акварель</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="29" class="checkbox" data-name="Биомеханика">Биомеханика</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="30" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="31" class="checkbox" data-name="Вип Шейдинг">Вип Шейдинг</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="32" class="checkbox" data-name="Блэкворк">Блэкворк</label></div>
+					</div>
+				</div>
+				<div class="form__buttons">
+					<div class="row">
+						<div class="col-6">
+							<input type="reset" class="btn btn--w100 btn--transparent" value="Сбросить">
+						</div>
+						<div class="col-6">
+							<input type="submit" class="btn btn--w100" value="Применить">
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div id="filter_catalog" class="popup popup--filter">
+		<div class="popup__inner">
+			<h3>Фильтры</h3>
+			<form action="/" name="" class="mt" id="form_filter_catalog">
+				<div class="filter__group">
+					<div class="filter__group-title pt pb">Тип</div>
+					<div class="filter__group-data">
+						<div class="form__checkbox"><label><input type="checkbox" value="1" class="checkbox" data-name="Индукционные">Индукционные</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="2" class="checkbox" data-name="Роторные">Роторные</label></div>
+					</div>
+				</div>
+				<div class="filter__group">
+					<div class="filter__group-title pt pb">Бренд</div>
+					<div class="filter__group-data">
+						<div class="form__checkbox"><label><input type="checkbox" value="1" class="checkbox" data-name="ArtDriver Tattoo Machine">ArtDriver Tattoo Machine</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="2" class="checkbox" data-name="Barmaley Machines">Barmaley Machines</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="3" class="checkbox" data-name="Burlak Machines">Burlak Machines</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="4" class="checkbox" data-name="BUZZ Rotary">BUZZ Rotary</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="5" class="checkbox" data-name="Critical Tattoo Machine">Critical Tattoo Machine</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="6" class="checkbox" data-name="Cheyenne">Cheyenne</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="7" class="checkbox" data-name="Diablo Rotary">Diablo Rotary</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="8" class="checkbox" data-name="Dragonfly X2">Dragonfly X2</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="9" class="checkbox" data-name="EGO">EGO</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="10" class="checkbox" data-name="Elite Pen">Elite Pen</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="11" class="checkbox" data-name="Odds And Ends">Odds And Ends</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="12" class="checkbox" data-name="Handy Help">Handy Help</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="13" class="checkbox" data-name="Knick Knacks">Knick Knacks</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="14" class="checkbox" data-name="Nick’S Knacks">Nick’S Knacks</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="15" class="checkbox" data-name="Et Cetera Systems">Et Cetera Systems</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="16" class="checkbox" data-name="Closet Of Choices">Closet Of Choices</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="17" class="checkbox" data-name="Assorted Assets">Assorted Assets</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="18" class="checkbox" data-name="Trusted Assortment">Trusted Assortment</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="19" class="checkbox" data-name="Applicable Assortment">Applicable Assortment</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="20" class="checkbox" data-name="Resource Refresh">Resource Refresh</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="21" class="checkbox" data-name="Random Refresh">Random Refresh</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="22" class="checkbox" data-name="The Source">The Source</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="23" class="checkbox" data-name="Complete Collection">Complete Collection</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="24" class="checkbox" data-name="Terrific Tchotchkes">Terrific Tchotchkes</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="24" class="checkbox" data-name="Sporadic Systems">Sporadic Systems</label></div>
+					</div>
+				</div>
+				<div class="filter__group">
+					<div class="filter__group-title pt pb">Страна производитель</div>
+					<div class="filter__group-data">
+						<div class="form__checkbox"><label><input type="checkbox" value="1" class="checkbox" data-name="Польша">Польша</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="2" class="checkbox" data-name="Россия">Россия</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="3" class="checkbox" data-name="США">США</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="4" class="checkbox" data-name="Украина">Украина</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="5" class="checkbox" data-name="Великобритания">Великобритания</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="6" class="checkbox" data-name="КНР">КНР</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="7" class="checkbox" data-name="Тайвань">Тайвань</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="8" class="checkbox" data-name="Германия">Германия</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="9" class="checkbox" data-name="Венгрия">Венгрия</label></div>
+						<div class="form__checkbox"><label><input type="checkbox" value="10" class="checkbox" data-name="Швеция">Швеция</label></div>
+					</div>
+				</div>
+				<div class="form__buttons">
+					<div class="row">
+						<div class="col-6">
+							<input type="reset" class="btn btn--w100 btn--transparent" value="Сбросить">
+						</div>
+						<div class="col-6">
+							<input type="submit" class="btn btn--w100" value="Применить">
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div id="messages" class="popup popup--messages">
+		<div class="popup__inner dialogs">
+			<div class="popup__header">
+				<h3>Сообщения</h3>
+			</div>
+			<!-- <div class="messages__dialogs messages__dialogs--empty"> --> <!-- ЕСЛИ ДИАЛОГОВ НЕТ -->
+			<div class="messages__dialogs">
+				<div class="messages__dialog" data-dialog="1">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/006.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Вероника Кравчинская</div>
+									<div class="author__message">И со мной она так же обошлась! Ха...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"><span>3</span></div>
+							<div class="message__date">01:15</div>
+						</div>
+					</div>
+				</div>
+				<div class="messages__dialog" data-dialog="2">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/007.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Артур Джебко</div>
+									<div class="author__message">Вы НИ когда не были нашим клиен...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"><span>1</span></div>
+							<div class="message__date">Вчера</div>
+						</div>
+					</div>
+				</div>
+				<div class="messages__dialog" data-dialog="3">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/002.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Виктория Третьякова</div>
+									<div class="author__message">Кто бы что не говорил, а татуировк...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"></div>
+							<div class="message__date">Вс</div>
+						</div>
+					</div>
+				</div>
+				<div class="messages__dialog" data-dialog="4">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/005.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Мадина Шмидт</div>
+									<div class="author__message">Я мечтала о татуировке лет с 18, оч...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"></div>
+							<div class="message__date">31.12.19</div>
+						</div>
+					</div>
+				</div>
+				<div class="messages__dialog" data-dialog="1">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/006.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Вероника Кравчинская</div>
+									<div class="author__message">И со мной она так же обошлась! Ха...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"></div>
+							<div class="message__date">01:15</div>
+						</div>
+					</div>
+				</div>
+				<div class="messages__dialog" data-dialog="2">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/007.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Артур Джебко</div>
+									<div class="author__message">Вы НИ когда не были нашим клиен...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"></div>
+							<div class="message__date">Вчера</div>
+						</div>
+					</div>
+				</div>
+				<div class="messages__dialog" data-dialog="3">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/002.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Виктория Третьякова</div>
+									<div class="author__message">Кто бы что не говорил, а татуировк...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"></div>
+							<div class="message__date">Вс</div>
+						</div>
+					</div>
+				</div>
+				<div class="messages__dialog" data-dialog="4">
+					<div class="row">
+						<div class="col-9">
+							<div class="messages__author author author--48">
+								<div class="author__image">
+									<div class="author__photo ibg"><img src="upload/users/005.jpg" alt=""></div>
+								</div>
+								<div class="author__data">
+									<div class="author__name">Мадина Шмидт</div>
+									<div class="author__message">Я мечтала о татуировке лет с 18, оч...</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="message__indi"></div>
+							<div class="message__date">31.12.19</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup__inner dialog">
+			<div class="popup__header">
+				<a href="#" class="back-to-dialogs"></a>
+				<a href="#" class="dialog__author author author--40">
+					<div class="author__image">
+						<div class="author__photo ibg"><img src="upload/users/006.jpg" alt=""></div>
+					</div>
+					<div class="author__data">
+						<div class="author__name">Вероника Кравчинская</div>
+					</div>
+				</a>
+			</div>
+			<div class="messages__messages">
+				<div class="messages__messages-inner">
+					<div class="dialog__date"><span>16 февраля</span></div>
+					<div class="dialog__message dialog__message--apponent">
+						<div>И со мной она так же обошлась! Хамит, клиентов не ценит.В её салоне в Симферополе по улице Казанская, 30 работает Андрей, который водит меня за нос уже целый год и никак не хочу доделать свою работу.</div>
+						<span>00:58</span>
+					</div>
+					<div class="dialog__message dialog__message--apponent">
+						<img src="upload/masonry/004.jpg" alt="">
+						<span>00:59</span>
+					</div>
+					<div class="dialog__message dialog__message--you">
+						<div>Вы НИ когда не были нашим клиентом. И это прекрасно! Спасибо за чёрный пиар))) Всего наилучшего)</div>
+						<span>01:15</span>
+					</div>
+					<div class="dialog__message dialog__message--apponent">
+						<div>И со мной она так же обошлась! Хамит, клиентов не ценит.В её салоне в Симферополе по улице Казанская, 30 работает Андрей, который водит меня за нос уже целый год и никак не хочу доделать свою работу.</div>
+						<span>00:58</span>
+					</div>
+					<div class="dialog__message dialog__message--you">
+						<div>Вы НИ когда не были нашим клиентом. И это прекрасно! Спасибо за чёрный пиар))) Всего наилучшего)</div>
+						<span>01:15</span>
+					</div>
+					<div class="dialog__message dialog__message--you">
+						<div>Вы НИ когда не были нашим клиентом. И это прекрасно! Спасибо за чёрный пиар))) Всего наилучшего)</div>
+						<span>01:15</span>
+					</div>
+					<div class="dialog__message dialog__message--you">
+						<img src="upload/masonry/002.jpg" alt="">
+						<span>01:15</span>
+					</div>
+				</div>
+			</div>
+			<div class="popup__footer">
+				<form action="/" method="post" class="dialog__form">
+					<input type="file" name="dialog__file">
+					<textarea name="" value="" id="dialog__textarea" class="textarea" placeholder="Сообщение" class="textarea"></textarea>
+					<input type="submit" value="">
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="login_form" class="popup">
+		<div class="popup__inner">
+			<div class="mb text-align-center">
+				<a href="javascript:;" class="btn" id="auth">Авторизоваться</a>
+			</div>
+			<div class="auth">
+				<a href="#" class="auth__item auth__item--vk">
+					<i class="fab fa-vk"></i>
+				</a>
+				<a href="#" class="auth__item auth__item--facebook">
+					<i class="fab fa-facebook-f"></i>
+				</a>
+				<a href="#" class="auth__item auth__item--instagram">
+					<i class="fab fa-instagram"></i>
+				</a>
+				<a href="#" class="auth__item auth__item--yandex">
+					<i class="fab fa-yandex"></i>
+				</a>
+				<a href="#" class="auth__item auth__item--google">
+					<i class="fab fa-google"></i>
+				</a>
+				<a href="#" class="auth__item auth__item--mailru">
+					<i class="fas fa-at"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery -->
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<!-- recliner -->
+	<script src="js/recliner.min.js"></script>
+	<!-- prefixfree -->
+	<script src="js/prefixfree.min.js"></script>
+	<!-- slick -->
+	<script src="plugins/slick-1.8.1/slick.min.js"></script>
+	<!-- fancybox -->
+	<script src="plugins/fancybox-master/jquery.fancybox.min.js"></script>
+	<!-- chosen -->
+	<script src="plugins/chosen_v1.8.7/chosen.jquery.min.js"></script>
+	<!-- mansory -->
+	<script src="plugins/mp-mansory/mp.mansory.js"></script>
+	<!-- dropzone -->
+	<script src="plugins/dropzone/dropzone.js"></script>
+	<!-- mask -->
+	<script src="plugins/jQuery-Mask-Plugin-master/jquery.mask.min.js"></script>
+	<!-- growl -->
+	<script src="plugins/jquery.growl/jquery.growl.js"></script>
+	<!-- user script -->
+	<script src="script.js"></script>
+
+</body>
+</html>
