@@ -1,23 +1,23 @@
-import React, {useMemo} from "react";
-import {usePathname} from "next/navigation";
+import React, { useMemo } from "react";
+import { usePathname } from "next/navigation";
 import styled from "styled-components";
 import urlJoin from "url-join";
-import {Container} from "@common/Container";
-import {Page} from "@common/Page";
-import {Section} from "@common/Section";
+import { Container } from "@common/Container";
+import { Page } from "@common/Page";
+import { Section } from "@common/Section";
 import {
     BrandLine,
-    CatalogListBrandOption,
+    // Удалите неиспользуемый импорт `CatalogListBrandOption`
     CatalogListDefaultOption,
     GetBrandCategoriesResult,
     useApi
 } from "@common/api";
-import {siteUrl} from "@common/config";
-import {useCatalog} from "../Catalog";
-import {BrandProvider} from "./Context";
-import {BrandInfo} from "./Info";
-import {Main} from "./Main";
-import {MobileCategories} from "./MobileCategories";
+import { siteUrl } from "@common/config";
+import { useCatalog } from "../Catalog";
+import { BrandProvider } from "./Context";
+import { BrandInfo } from "./Info";
+import { Main } from "./Main";
+import { MobileCategories } from "./MobileCategories";
 
 export const BrandSection = styled(Section)`
     padding: 30px 0px;
@@ -33,24 +33,33 @@ export const BrandSection = styled(Section)`
 `;
 
 export interface BrandPageProps {
-    brand: CatalogListBrandOption;
+    brand: {
+        code: string;
+        id: number;
+        logo: string | null;
+        models: number[];
+        name: string;
+        text: string;
+        stars?: number;
+        sold?: number;
+    };
     brandCategories: GetBrandCategoriesResult;
 }
 
-export const BrandPage: React.FC<BrandPageProps> = ({brand, brandCategories}) => {
+export const BrandPage: React.FC<BrandPageProps> = ({ brand, brandCategories }) => {
     const pathname = usePathname();
 
-    const {saleItemsQuery, catalogLists} = useCatalog();
+    const { saleItemsQuery, catalogLists } = useCatalog();
     const api = useApi();
     const brandName: string = brand.name.replace(/\\/g, "");
     const stars: number | null = brand.stars ? +brand.stars : null;
     const sold: number | null = brand.sold ? +brand.sold : null;
     const series = useMemo<CatalogListDefaultOption[]>(
-        () => api.catalog.utils.getSeriesByBrand({catalogLists, brand}),
+        () => api.catalog.utils.getSeriesByBrand({ catalogLists, brand }),
         [api, catalogLists, brand]
     );
     const lines = useMemo<BrandLine[]>(
-        () => api.catalog.utils.getBrandLines({brand, catalogLists}),
+        () => api.catalog.utils.getBrandLines({ brand, catalogLists }),
         [api, brand, catalogLists]
     );
     const pageTitle: string = "Бренд " + brandName;
