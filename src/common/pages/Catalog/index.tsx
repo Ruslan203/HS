@@ -1,7 +1,8 @@
-import React, {useCallback, useEffect, useMemo, useState} from "react";
-import {usePathname} from "next/navigation";
-import {useRouter} from "next/router";
-import {Page} from "@common/Page";
+// src/common/pages/Catalog/index.tsx
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";
+import { Page } from "@common/Page";
 import {
     CatalogListBrandOption,
     CatalogListDefaultOption,
@@ -9,37 +10,108 @@ import {
     GetBrandCategoriesResult,
     GetSaleItemsOptions,
     SaleFilter,
-    SaleImage,
     SaleItemsFilters,
     SaleOption,
     useApi,
     useSaleItemsQuery
 } from "@common/api";
-import {GetSaleItemsResult} from "@common/api";
-import {AppPageProps, useApp} from "@common/app";
-import {LinePage} from "@common/pages/Line";
-import {BrandPage} from "../Brand";
-import {SeriaPage} from "../Seria";
-import {CatalogBody} from "./Body";
-import {CatalogProvider} from "./Context";
-import {CatalogHead} from "./Head";
-import {CatalogPath, getCatalogPath} from "./Path";
-import {useCatalogQueryBuilder} from "./QueryBuilder";
-import {CatalogSection} from "./Section";
+import { GetSaleItemsResult } from "@common/api";
+import { AppPageProps, useApp } from "@common/app";
+import { LinePage } from "@common/pages/Line";
+import { BrandPage } from "../Brand";
+import { SeriaPage } from "../Seria";
+import { CatalogBody } from "./Body";
+import { CatalogProvider } from "./Context";
+import { CatalogHead } from "./Head";
+import { CatalogPath, getCatalogPath } from "./Path";
+import { useCatalogQueryBuilder } from "./QueryBuilder";
+import { CatalogSection } from "./Section";
+import directus from '../../../lib/directus';
 
-export interface CatalogPageProps {
+// Определяем интерфейсы для Option, Model, User и Good
+interface Option {
+    good_id: number;
+    id: number;
+    option_value: number;
+    options_id: number;
+}
+
+interface Model {
+    applications: any;
+    brand: number;
+    categories: any;
+    code: string;
+    date_created: string;
+    date_updated: string;
+    goods: number[];
+    id: number;
+    images: number[];
+    line: any;
+    name: string;
+    options: any[];
+    recommendations: any;
+    status: string;
+    structure: any;
+    text: any;
+    user_created: string;
+}
+
+interface User {
+    first_name: string;
+    last_name: string;
+    email: string;
+    phone: string;
+}
+
+interface Good {
+    article: string;
+    date_created: string;
+    date_updated: string;
+    id: number;
+    images: any[];
+    model: Model;
+    name: string;
+    old_price: string | null;
+    options: Option[];
+    price: string;
+    price_article: string;
+    quantity: string;
+    sort: any;
+    status: string;
+    stock_name: string;
+    user_created: User;
+    user_updated: User;
+}
+
+interface CatalogPageProps {
     brandCategories?: GetBrandCategoriesResult | null;
     saleItems?: GetSaleItemsResult;
+    goods: Good[];
 }
+
+export const getServerSideProps = async () => {
+    // Получение данных о продуктах из Directus
+    const response = await directus.items('models').readMany({
+        fields: ['goods.*.*']
+    });
+    const goods: Good[] = response.data.flatMap(model => model.goods);
+
+    return {
+        props: {
+            goods,
+        },
+    };
+};
 
 export const CatalogPage: React.FC<AppPageProps & CatalogPageProps> = ({
     brandCategories = null,
-    saleItems: initialSaleItems
+    saleItems: initialSaleItems,
+    goods
 }) => {
-    const {catalogLists} = useApp();
+    const { catalogLists } = useApp();
     const router = useRouter();
     const pathname = usePathname();
-    const {name, subname} = router.query;
+    const { name, subname } = router.query;
     const api = useApi();
     const category = useMemo<CatalogListFoldersOption | null>(() => {
         const catalogPath: CatalogPath = getCatalogPath(router.query);
@@ -89,21 +161,21 @@ export const CatalogPage: React.FC<AppPageProps & CatalogPageProps> = ({
         let line: CatalogListDefaultOption | null = null;
 
         if (typeof name === "string" && typeof subname === "string") {
-            brand = api.catalog.utils.getBrandByCode({code: name, catalogLists});
-            seria = api.catalog.utils.getSeriaByUrl({url: pathname, catalogLists});
+            brand = api.catalog.utils.getBrandByCode({ code: name, catalogLists });
+            seria = api.catalog.utils.getSeriaByUrl({ url: pathname, catalogLists });
             if (seria === null) {
-                line = api.catalog.utils.getLineByUrl({url: pathname, catalogLists});
+                line = api.catalog.utils.getLineByUrl({ url: pathname, catalogLists });
             }
         } else if (typeof name === "string") {
-            brand = api.catalog.utils.getBrandByCode({code: name, catalogLists});
+            brand = api.catalog.utils.getBrandByCode({ code: name, catalogLists });
         }
 
         return [brand, seria, line];
     }, [name, subname, catalogLists]);
-    const {catalogQueryBuilder, sort, setSort, filtersSelected, setFiltersSelected, resetFilters} =
-        useCatalogQueryBuilder({router, catalogLists});
+    const { catalogQueryBuilder, sort, setSort, filtersSelected, setFiltersSelected, resetFilters } =
+        useCatalogQueryBuilder({ router, catalogLists });
     const saleItemsQueryOptions = useMemo<GetSaleItemsOptions>(
-        () => catalogQueryBuilder.toGetSaleItemsOptions({category, filtersSelected}),
+        () => catalogQueryBuilder.toGetSaleItemsOptions({ category, filtersSelected }),
         [catalogQueryBuilder, category]
     );
     const saleItemsQuery = useSaleItemsQuery({
@@ -128,7 +200,7 @@ export const CatalogPage: React.FC<AppPageProps & CatalogPageProps> = ({
             saleItemsQuery.data?.pages[0]?.filters ?? null;
 
         if (category !== null && saleItemsFilters !== null) {
-            return api.catalog.utils.getSaleFilters({catalogLists, saleItemsFilters});
+            return api.catalog.utils.getSaleFilters({ catalogLists, saleItemsFilters });
         } else {
             return [];
         }
@@ -157,7 +229,7 @@ export const CatalogPage: React.FC<AppPageProps & CatalogPageProps> = ({
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL?.slice(0, -1);
     const productList = saleItemsQuery?.data?.pages[0].items;
 
-    const textTransform = (options: SaleOption[] | boolean, images: SaleImage[]): string => {
+    const textTransform = (options: SaleOption[] | boolean, images: any[]): string => {
         return api.catalog.utils.getSaleFullName({
             catalogLists,
             optionSelected: (options as SaleOption[])[0],
@@ -170,7 +242,7 @@ export const CatalogPage: React.FC<AppPageProps & CatalogPageProps> = ({
             "@context": "https://schema.org/",
             "@type": "ItemList",
             name: pageName,
-            itemListElement: productList?.map(({url, options, images}, index) => ({
+            itemListElement: productList?.map(({ url, options, images }, index) => ({
                 "@type": "ListItem",
                 position: index + 1,
                 item: {
@@ -226,7 +298,7 @@ export const CatalogPage: React.FC<AppPageProps & CatalogPageProps> = ({
             >
                 <CatalogSection>
                     <CatalogHead />
-                    <CatalogBody />
+                    <CatalogBody goods={goods} />
                 </CatalogSection>
             </Page>
         );
