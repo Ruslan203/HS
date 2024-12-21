@@ -1,4 +1,3 @@
-// src/common/pages/Catalog/Body/index.tsx
 import React from 'react';
 
 // Определяем интерфейс для Option
@@ -11,22 +10,22 @@ interface Option {
 
 // Определяем интерфейс для Model
 interface Model {
-    applications: any;
+    applications: unknown;
     brand: number;
-    categories: any;
+    categories: unknown;
     code: string;
     date_created: string;
     date_updated: string;
     goods: number[];
     id: number;
-    images: number[];
-    line: any;
+    images: unknown[];
+    line: unknown;
     name: string;
-    options: any[];
-    recommendations: any;
+    options: unknown[];
+    recommendations: unknown;
     status: string;
-    structure: any;
-    text: any;
+    structure: unknown;
+    text: unknown;
     user_created: string;
 }
 
@@ -44,7 +43,7 @@ interface Good {
     date_created: string;
     date_updated: string;
     id: number;
-    images: any[];
+    images: unknown[];
     model: Model;
     name: string;
     old_price: string | null;
@@ -52,7 +51,7 @@ interface Good {
     price: string;
     price_article: string;
     quantity: string;
-    sort: any;
+    sort: unknown;
     status: string;
     stock_name: string;
     user_created: User;

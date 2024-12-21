@@ -1,4 +1,3 @@
-// src/common/pages/Catalog/index.tsx
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/router";
@@ -20,7 +19,7 @@ import { AppPageProps, useApp } from "@common/app";
 import { LinePage } from "@common/pages/Line";
 import { BrandPage } from "../Brand";
 import { SeriaPage } from "../Seria";
-import { CatalogBody } from "./Body";
+import CatalogBody from "./Body"; // Обновленный импорт
 import { CatalogProvider } from "./Context";
 import { CatalogHead } from "./Head";
 import { CatalogPath, getCatalogPath } from "./Path";
@@ -37,22 +36,22 @@ interface Option {
 }
 
 interface Model {
-    applications: any;
+    applications: unknown;
     brand: number;
-    categories: any;
+    categories: unknown;
     code: string;
     date_created: string;
     date_updated: string;
-    goods: number[];
+    goods: Good[];
     id: number;
-    images: number[];
-    line: any;
+    images: unknown[];
+    line: unknown;
     name: string;
-    options: any[];
-    recommendations: any;
+    options: unknown[];
+    recommendations: unknown;
     status: string;
-    structure: any;
-    text: any;
+    structure: unknown;
+    text: unknown;
     user_created: string;
 }
 
@@ -68,7 +67,7 @@ interface Good {
     date_created: string;
     date_updated: string;
     id: number;
-    images: any[];
+    images: unknown[];
     model: Model;
     name: string;
     old_price: string | null;
@@ -76,7 +75,7 @@ interface Good {
     price: string;
     price_article: string;
     quantity: string;
-    sort: any;
+    sort: unknown;
     status: string;
     stock_name: string;
     user_created: User;
@@ -94,7 +93,9 @@ export const getServerSideProps = async () => {
     const response = await directus.items('models').readMany({
         fields: ['goods.*.*']
     });
-    const goods: Good[] = response.data.flatMap(model => model.goods);
+
+    // Явное указание типа для параметра model
+    const goods: Good[] = response.data.flatMap((model: Model) => model.goods);
 
     return {
         props: {
@@ -229,7 +230,7 @@ export const CatalogPage: React.FC<AppPageProps & CatalogPageProps> = ({
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL?.slice(0, -1);
     const productList = saleItemsQuery?.data?.pages[0].items;
 
-    const textTransform = (options: SaleOption[] | boolean, images: any[]): string => {
+    const textTransform = (options: SaleOption[] | boolean, images: unknown[]): string => {
         return api.catalog.utils.getSaleFullName({
             catalogLists,
             optionSelected: (options as SaleOption[])[0],
