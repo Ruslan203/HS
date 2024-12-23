@@ -1,8 +1,0 @@
-{
-    printWidth: 100,
-    tabWidth: 4,
-    trailingComma: "none",
-    bracketSpacing: false,
-    importOrder: ["react", "next", "^next/(.*)$", "styled-components", "<THIRD_PARTY_MODULES>", "^@common/(.*)$", "^[./]"],
-    importOrderSortSpecifiers: true
-}
