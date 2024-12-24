@@ -1,78 +1,62 @@
 // src/components/ModelItem.tsx
 import React, { useEffect, useState } from 'react';
-import { getGoodsByModelId, getOptionsByGoodId } from '../utils/directus';
+import { getGoodsByModelId, getOptionsByGoodId } from '../lib/directus';
 
 interface Model {
   id: number;
+}
+
+interface Goods {
+  id: number;
   name: string;
-  brand: number;
+}
+
+interface Options {
+  id: number;
   code: string;
-  date_created: string;
-  date_updated: string;
-  goods: number[];
-  images: string[];
-  status: string;
-}
-
-interface Good {
-  id: number;
-  article: string;
   name: string;
-  price: string;
-  old_price: string | null;
-  quantity: string;
-  status: string;
-  options: number[];
-}
-
-interface Option {
-  good_id: number;
-  id: number;
-  option_value: number;
-  options_id: number;
+  level: string;
+  sort: number | null;
+  goods_options: number[];
+  models_options: number[];
+  values: number[];
 }
 
 const ModelItem: React.FC<{ model: Model }> = ({ model }) => {
-  const [goods, setGoods] = useState<Good[]>([]);
-  const [options, setOptions] = useState<{ [key: number]: Option[] }>({});
+  const [goods, setGoods] = useState<Goods[]>([]);
+  const [options, setOptions] = useState<Options[]>([]);
 
   useEffect(() => {
     const fetchGoods = async () => {
-      const goodsData = await getGoodsByModelId(model.id);
-      setGoods(goodsData);
+      try {
+        const goodsData = await getGoodsByModelId(model.id);
+        setGoods(goodsData);
 
-      const optionsData: { [key: number]: Option[] } = {};
-      for (const good of goodsData) {
-        const goodOptions = await getOptionsByGoodId(good.id);
-        optionsData[good.id] = goodOptions;
+        if (goodsData.length > 0) {
+          const optionsData = await getOptionsByGoodId(goodsData[0].id);
+          setOptions(optionsData);
+        }
+      } catch (error) {
+        console.error('Error fetching goods or options:', error);
       }
-      setOptions(optionsData);
     };
 
     fetchGoods();
   }, [model.id]);
 
   return (
-    <div className="model-item">
-      <h2>{model.name}</h2>
-      {goods.map(good => (
-        <div key={good.id} className="good-item">
-          <h3>{good.name}</h3>
-          <p>Артикул: {good.article}</p>
-          <p>Цена: {good.price} ₽</p>
-          <p>Количество: {good.quantity}</p>
-          {options[good.id] && (
-            <div className="options">
-              <h4>Опции:</h4>
-              <ul>
-                {options[good.id].map(option => (
-                  <li key={option.id}>Опция ID: {option.options_id}, Значение: {option.option_value}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-      ))}
+    <div>
+      <h2>Model {model.id}</h2>
+      <ul>
+        {goods.map((good) => (
+          <li key={good.id}>{good.name}</li>
+        ))}
+      </ul>
+      <ul>
+        {options.map((option) => (
+          <li key={option.id}>{option.name}</li>
+        ))}
+      </ul>
     </div>
   );
 };
