@@ -1,23 +1,18 @@
 // types/models.ts
+import { Goods } from './goods';
 
-// types/models.ts
-
-export type Model = {
-  applications: string | null; // textarea
-  brand: number; // M2O (Many-to-One relationship)
-  categories: number | null; // M2O (Many-to-One relationship)
-  code: string; // slug
-  date_created: string; // ISO 8601 format (Datetime)
-  date_updated: string; // ISO 8601 format (Datetime)
-  goods: number[]; // O2M (One-to-Many relationship)
-  id: number; // input
-  images: string[]; // Files (assuming array of URLs or file paths)
-  line: number | null; // M2O (Many-to-One relationship)
-  name: string; // Input
-  options: number[]; // O2M (One-to-Many relationship)
-  recommendations: string | null; // текстовые данные
-  status: string; // published
-  structure: string | null; // текстовые данные
-  text: string | null; // WYSIWYG
-  user_created: number; // M2O (Many-to-One relationship)
-};
+export interface Model {
+  id: number;
+  name: string;
+  status: string;
+  applications: string | null;
+  brand: number;
+  categories: number | null;
+  code: string;
+  date_created: string;
+  date_updated: string;
+  images: string[];
+  line: number | null;
+  user_created: number;
+  goods: Goods[]; // Обновляем это поле, если оно должно быть массивом объектов Goods
+}

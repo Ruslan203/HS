@@ -1,24 +1,29 @@
-// src/lib/directus.ts
-
-import { createDirectus, rest } from '@directus/sdk';
-import { Model } from '../types/models';
-import { Brand } from '../types/brands';
-import { Goods } from '../types/goods';
+import { createDirectus, rest, readItems } from '@directus/sdk';
 import { Option } from '../types/options';
-import { OrderTypes } from '../types/orders';
+import { Goods } from '../types/goods';
 
-// Определяем типы для коллекций
-type Schema = {
-  models: Model[];
-  brands: Brand[];
-  goods: Goods[];
-  options: Option[];
-  orders: OrderTypes[];
-};
-
-// Создаем экземпляр Directus SDK с указанной схемой
-const directus = createDirectus<Schema>(
+// Создаем экземпляр Directus SDK
+const directus = createDirectus(
   process.env.NEXT_PUBLIC_DIRECTUS_URL as string
 ).with(rest());
 
-export default directus;
+// Функция для получения всех опций для товара
+export const getOptionsForGoods = async (goodId: number): Promise<Option[]> => {
+  try {
+    const optionsResponse = await directus.request(
+      readItems('options', {
+        filter: {
+          good_id: {
+            _eq: goodId
+          }
+        }
+      })
+    );
+
+    const options = optionsResponse as Option[];
+    return options;
+  } catch (error) {
+    console.error("Error fetching options for goods:", error);
+    return [];
+  }
+};

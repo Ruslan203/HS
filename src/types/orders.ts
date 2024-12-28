@@ -14,4 +14,6 @@ export type OrderTypes = {
   total_amount: string;
   user_created: string; // UUID пользователя, создавшего запись
   user_updated: string; // UUID пользователя, обновившего запись
+  order_no: string; // Добавляем свойство order_no
+
 };
