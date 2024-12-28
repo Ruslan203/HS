@@ -1,21 +1,22 @@
-// types/goods.ts
+// src/types/goods.ts
 
 export type Goods = {
   article: string;
-  date_created: string; // ISO 8601 format (Datetime)
-  date_updated: string; // ISO 8601 format (Datetime)
+  date_created: string;
+  date_updated: string;
   id: number;
-  images: string[]; // Предполагаем, что это массив строк (URL изображений)
+  images: string[];
   model: number;
   name: string;
-  old_price: number | null;
-  options: number[]; // Массив идентификаторов опций
+  old_price: string | null;
+  options: number[];
+  orders: number | null; // M2O (Many-to-One relationship)
   price: string;
   price_article: string;
-  quantity: string; // Количество товара в наличии
+  quantity: string;
   sort: number;
   status: string;
   stock_name: string;
-  user_created: string; // UUID пользователя, создавшего запись
-  user_updated: string; // UUID пользователя, обновившего запись
+  user_created: string;
+  user_updated: string;
 };
